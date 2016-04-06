@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<project name="netapp" default="rebuild">
+
+	<property environment="env"/>
+	<property file="build.conf" />
+
+	<path id="library.path">
+		<fileset dir="${lib}">
+			<include name="**/*"/>
+		</fileset>		
+	</path>
+	
+	<target name="clean">
+		<delete dir="${build}" />		
+	</target>
+	
+	<target name="init">
+		<mkdir dir="${build}" />		
+	</target>
+	
+	<target name="compile" depends="init">		
+		<javac srcdir="${src}" destdir="${build}" 
+				optimize="yes" 
+				debug="false"  
+				deprecation="false" 
+				includeantruntime="false" >
+			<classpath refid="library.path" />
+		</javac>
+	</target>
+	
+	<target name="jar">
+		<tstamp>
+			<format property="TIME_NOW" pattern="d-MMMM-yyyy HH:mm:ss" />
+		</tstamp>		
+		<manifest file="${build}/MANIFEST.MF">
+			<attribute name="Implementation-Title" value="${name} release" />
+			<attribute name="Implementation-Version" value="${version}" />
+			<attribute name="Class-Path" value="${classpath}" />
+			<attribute name="Built-Date" value="${TIME_NOW}" />
+			<attribute name="Built-By" value="${env.USERNAME}" />
+			<attribute name="Main-Class" value="${mainclass}" />
+		</manifest>
+		<jar destfile="${name}.jar" manifest="${build}/MANIFEST.MF">
+			<fileset dir="${build}">
+				<include name="**/*.class" />				
+			</fileset>
+			<fileset dir="${src}">
+				<exclude name="**/*.java" />				
+			</fileset>			
+		</jar>			
+	</target>
+	
+	<target name="rebuild" description="create dist" depends="clean, init, compile, jar" />
+			
+</project>

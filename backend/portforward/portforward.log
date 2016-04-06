@@ -1,0 +1,487 @@
+2016-02-25T21:23:17,790 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing for [root] with value=[TRACE, rolling, stdout].
+2016-02-25T21:23:17,847 DEBUG main org.apache.log4j.PropertyConfigurator - Level token is [TRACE].
+2016-02-25T21:23:17,848 DEBUG main org.apache.log4j.PropertyConfigurator - Category root set to TRACE.
+2016-02-25T21:23:17,849 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing appender named "rolling".
+2016-02-25T21:23:17,934 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing layout options for "rolling".
+2016-02-25T21:23:18,146 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [conversionPattern] to [%d{yyyy-MM-dd'T'HH:mm:ss,SSS} %p %t %c - %m%n].
+2016-02-25T21:23:18,620 DEBUG main org.apache.log4j.PropertyConfigurator - End of parsing for "rolling".
+2016-02-25T21:23:18,625 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [maxFileSize] to [10MB].
+2016-02-25T21:23:18,625 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [maxBackupIndex] to [10].
+2016-02-25T21:23:18,625 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [file] to [portforward.log].
+2016-02-25T21:23:18,633 DEBUG main org.apache.log4j.rolling.RollingFileAppender - setFile called: portforward.log, true
+2016-02-25T21:23:18,635 DEBUG main org.apache.log4j.rolling.RollingFileAppender - setFile ended
+2016-02-25T21:23:18,635 DEBUG main org.apache.log4j.PropertyConfigurator - Parsed "rolling" options.
+2016-02-25T21:23:18,635 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing appender named "stdout".
+2016-02-25T21:23:18,638 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing layout options for "stdout".
+2016-02-25T21:23:18,639 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [conversionPattern] to [%5p [%t] (%F:%L) - %m%n].
+2016-02-25T21:23:18,659 DEBUG main org.apache.log4j.PropertyConfigurator - End of parsing for "stdout".
+2016-02-25T21:23:18,659 DEBUG main org.apache.log4j.PropertyConfigurator - Parsed "stdout" options.
+2016-02-25T21:23:18,659 DEBUG main org.apache.log4j.PropertyConfigurator - Finished configuring.
+2016-02-25T21:26:20,143 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing for [root] with value=[TRACE, rolling, stdout].
+2016-02-25T21:26:20,151 DEBUG main org.apache.log4j.PropertyConfigurator - Level token is [TRACE].
+2016-02-25T21:26:20,153 DEBUG main org.apache.log4j.PropertyConfigurator - Category root set to TRACE.
+2016-02-25T21:26:20,153 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing appender named "rolling".
+2016-02-25T21:26:20,196 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing layout options for "rolling".
+2016-02-25T21:26:20,221 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [conversionPattern] to [%d{yyyy-MM-dd'T'HH:mm:ss,SSS} %p %t %c - %m%n].
+2016-02-25T21:26:20,251 DEBUG main org.apache.log4j.PropertyConfigurator - End of parsing for "rolling".
+2016-02-25T21:26:20,257 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [maxFileSize] to [10MB].
+2016-02-25T21:26:20,258 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [maxBackupIndex] to [10].
+2016-02-25T21:26:20,258 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [file] to [portforward.log].
+2016-02-25T21:26:20,266 DEBUG main org.apache.log4j.rolling.RollingFileAppender - setFile called: portforward.log, true
+2016-02-25T21:26:20,267 DEBUG main org.apache.log4j.rolling.RollingFileAppender - setFile ended
+2016-02-25T21:26:20,267 DEBUG main org.apache.log4j.PropertyConfigurator - Parsed "rolling" options.
+2016-02-25T21:26:20,267 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing appender named "stdout".
+2016-02-25T21:26:20,270 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing layout options for "stdout".
+2016-02-25T21:26:20,270 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [conversionPattern] to [%5p [%t] (%F:%L) - %m%n].
+2016-02-25T21:26:20,274 DEBUG main org.apache.log4j.PropertyConfigurator - End of parsing for "stdout".
+2016-02-25T21:26:20,274 DEBUG main org.apache.log4j.PropertyConfigurator - Parsed "stdout" options.
+2016-02-25T21:26:20,274 DEBUG main org.apache.log4j.PropertyConfigurator - Finished configuring.
+2016-02-25T21:26:39,109 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing for [root] with value=[TRACE, rolling, stdout].
+2016-02-25T21:26:39,117 DEBUG main org.apache.log4j.PropertyConfigurator - Level token is [TRACE].
+2016-02-25T21:26:39,119 DEBUG main org.apache.log4j.PropertyConfigurator - Category root set to TRACE.
+2016-02-25T21:26:39,119 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing appender named "rolling".
+2016-02-25T21:26:39,161 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing layout options for "rolling".
+2016-02-25T21:26:39,187 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [conversionPattern] to [%d{yyyy-MM-dd'T'HH:mm:ss,SSS} %p %t %c - %m%n].
+2016-02-25T21:26:39,218 DEBUG main org.apache.log4j.PropertyConfigurator - End of parsing for "rolling".
+2016-02-25T21:26:39,223 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [maxFileSize] to [10MB].
+2016-02-25T21:26:39,224 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [maxBackupIndex] to [10].
+2016-02-25T21:26:39,224 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [file] to [portforward.log].
+2016-02-25T21:26:39,232 DEBUG main org.apache.log4j.rolling.RollingFileAppender - setFile called: portforward.log, true
+2016-02-25T21:26:39,233 DEBUG main org.apache.log4j.rolling.RollingFileAppender - setFile ended
+2016-02-25T21:26:39,233 DEBUG main org.apache.log4j.PropertyConfigurator - Parsed "rolling" options.
+2016-02-25T21:26:39,233 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing appender named "stdout".
+2016-02-25T21:26:39,236 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing layout options for "stdout".
+2016-02-25T21:26:39,237 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [conversionPattern] to [%5p [%t] (%F:%L) - %m%n].
+2016-02-25T21:26:39,240 DEBUG main org.apache.log4j.PropertyConfigurator - End of parsing for "stdout".
+2016-02-25T21:26:39,241 DEBUG main org.apache.log4j.PropertyConfigurator - Parsed "stdout" options.
+2016-02-25T21:26:39,241 DEBUG main org.apache.log4j.PropertyConfigurator - Finished configuring.
+2016-02-25T21:27:10,781 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing for [root] with value=[TRACE, rolling, stdout].
+2016-02-25T21:27:10,789 DEBUG main org.apache.log4j.PropertyConfigurator - Level token is [TRACE].
+2016-02-25T21:27:10,790 DEBUG main org.apache.log4j.PropertyConfigurator - Category root set to TRACE.
+2016-02-25T21:27:10,790 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing appender named "rolling".
+2016-02-25T21:27:10,833 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing layout options for "rolling".
+2016-02-25T21:27:10,858 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [conversionPattern] to [%d{yyyy-MM-dd'T'HH:mm:ss,SSS} %p %t %c - %m%n].
+2016-02-25T21:27:10,888 DEBUG main org.apache.log4j.PropertyConfigurator - End of parsing for "rolling".
+2016-02-25T21:27:10,893 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [maxFileSize] to [10MB].
+2016-02-25T21:27:10,894 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [maxBackupIndex] to [10].
+2016-02-25T21:27:10,894 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [file] to [portforward.log].
+2016-02-25T21:27:10,902 DEBUG main org.apache.log4j.rolling.RollingFileAppender - setFile called: portforward.log, true
+2016-02-25T21:27:10,903 DEBUG main org.apache.log4j.rolling.RollingFileAppender - setFile ended
+2016-02-25T21:27:10,903 DEBUG main org.apache.log4j.PropertyConfigurator - Parsed "rolling" options.
+2016-02-25T21:27:10,903 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing appender named "stdout".
+2016-02-25T21:27:10,906 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing layout options for "stdout".
+2016-02-25T21:27:10,906 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [conversionPattern] to [%5p [%t] (%F:%L) - %m%n].
+2016-02-25T21:27:10,910 DEBUG main org.apache.log4j.PropertyConfigurator - End of parsing for "stdout".
+2016-02-25T21:27:10,910 DEBUG main org.apache.log4j.PropertyConfigurator - Parsed "stdout" options.
+2016-02-25T21:27:10,911 DEBUG main org.apache.log4j.PropertyConfigurator - Finished configuring.
+2016-02-25T21:27:11,104 INFO main com.sharneng.net.portforward.Listener - Ready to accept client connection on 0.0.0.0:8080
+2016-02-25T21:27:11,108 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:27:40,080 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:27:40,153 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/0:0:0:0:0:0:0:1,port=2595,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2596])
+2016-02-25T21:27:40,159 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2596] to Socket[addr=/0:0:0:0:0:0:0:1,port=2595,localport=8080])
+2016-02-25T21:27:40,160 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:27:40,686 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:27:40,687 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/0:0:0:0:0:0:0:1,port=2597,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2598])
+2016-02-25T21:27:40,688 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2598] to Socket[addr=/0:0:0:0:0:0:0:1,port=2597,localport=8080])
+2016-02-25T21:27:40,689 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:27:40,691 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:27:40,693 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/0:0:0:0:0:0:0:1,port=2599,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2600])
+2016-02-25T21:27:40,694 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2600] to Socket[addr=/0:0:0:0:0:0:0:1,port=2599,localport=8080])
+2016-02-25T21:27:40,694 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:27:40,696 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:27:40,698 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/0:0:0:0:0:0:0:1,port=2601,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2602])
+2016-02-25T21:27:40,699 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2602] to Socket[addr=/0:0:0:0:0:0:0:1,port=2601,localport=8080])
+2016-02-25T21:27:40,699 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:27:40,702 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:27:40,703 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/0:0:0:0:0:0:0:1,port=2603,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2604])
+2016-02-25T21:27:40,704 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2604] to Socket[addr=/0:0:0:0:0:0:0:1,port=2603,localport=8080])
+2016-02-25T21:27:40,704 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:27:40,706 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:27:40,708 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/0:0:0:0:0:0:0:1,port=2605,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2606])
+2016-02-25T21:27:40,708 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2606] to Socket[addr=/0:0:0:0:0:0:0:1,port=2605,localport=8080])
+2016-02-25T21:27:40,708 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:27:41,296 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:27:41,299 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/0:0:0:0:0:0:0:1,port=2607,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2612])
+2016-02-25T21:27:41,300 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2612] to Socket[addr=/0:0:0:0:0:0:0:1,port=2607,localport=8080])
+2016-02-25T21:27:41,300 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:27:41,301 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:27:41,302 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/0:0:0:0:0:0:0:1,port=2608,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2613])
+2016-02-25T21:27:41,302 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2613] to Socket[addr=/0:0:0:0:0:0:0:1,port=2608,localport=8080])
+2016-02-25T21:27:41,302 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:27:41,303 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:27:41,304 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/0:0:0:0:0:0:0:1,port=2609,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2614])
+2016-02-25T21:27:41,304 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2614] to Socket[addr=/0:0:0:0:0:0:0:1,port=2609,localport=8080])
+2016-02-25T21:27:41,305 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:27:41,305 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:27:41,306 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/0:0:0:0:0:0:0:1,port=2610,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2615])
+2016-02-25T21:27:41,307 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2615] to Socket[addr=/0:0:0:0:0:0:0:1,port=2610,localport=8080])
+2016-02-25T21:27:41,307 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:27:41,308 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:27:41,309 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/0:0:0:0:0:0:0:1,port=2611,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2616])
+2016-02-25T21:27:41,310 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2616] to Socket[addr=/0:0:0:0:0:0:0:1,port=2611,localport=8080])
+2016-02-25T21:27:41,310 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:27:41,674 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:27:41,675 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/0:0:0:0:0:0:0:1,port=2617,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2618])
+2016-02-25T21:27:41,676 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2618] to Socket[addr=/0:0:0:0:0:0:0:1,port=2617,localport=8080])
+2016-02-25T21:27:41,676 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:27:41,885 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:27:41,888 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/0:0:0:0:0:0:0:1,port=2619,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2620])
+2016-02-25T21:27:41,889 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2620] to Socket[addr=/0:0:0:0:0:0:0:1,port=2619,localport=8080])
+2016-02-25T21:27:41,889 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:27:41,949 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:27:41,951 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/0:0:0:0:0:0:0:1,port=2621,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2622])
+2016-02-25T21:27:41,957 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2622] to Socket[addr=/0:0:0:0:0:0:0:1,port=2621,localport=8080])
+2016-02-25T21:27:41,958 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:29:45,643 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:29:45,645 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51718,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2623])
+2016-02-25T21:29:45,646 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2623] to Socket[addr=/192.168.42.129,port=51718,localport=8080])
+2016-02-25T21:29:45,647 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:29:46,139 DEBUG Thread-30 com.sharneng.net.portforward.Processor - com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2623] to Socket[addr=/192.168.42.129,port=51718,localport=8080])
+java.net.SocketException: Connection reset by peer: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at com.sharneng.io.IOUtils.copyStream(Unknown Source)
+	at com.sharneng.net.portforward.Processor$Copier.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+2016-02-25T21:29:46,141 DEBUG Thread-29 com.sharneng.net.portforward.Processor - com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51718,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2623])
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:196)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at java.net.SocketInputStream.read(SocketInputStream.java:108)
+	at com.sharneng.io.IOUtils.copyStream(Unknown Source)
+	at com.sharneng.net.portforward.Processor$Copier.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+2016-02-25T21:29:46,996 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:29:46,997 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=39672,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2624])
+2016-02-25T21:29:46,998 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2624] to Socket[addr=/192.168.42.129,port=39672,localport=8080])
+2016-02-25T21:29:46,998 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:31:37,763 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:31:37,768 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51731,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2625])
+2016-02-25T21:31:37,773 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2625] to Socket[addr=/192.168.42.129,port=51731,localport=8080])
+2016-02-25T21:31:37,778 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:31:37,924 DEBUG Thread-33 com.sharneng.net.portforward.Processor - com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51731,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2625])
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:196)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at java.net.SocketInputStream.read(SocketInputStream.java:108)
+	at com.sharneng.io.IOUtils.copyStream(Unknown Source)
+	at com.sharneng.net.portforward.Processor$Copier.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+2016-02-25T21:31:38,144 DEBUG Thread-34 com.sharneng.net.portforward.Processor - com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2625] to Socket[addr=/192.168.42.129,port=51731,localport=8080])
+java.net.SocketException: Connection reset by peer: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at com.sharneng.io.IOUtils.copyStream(Unknown Source)
+	at com.sharneng.net.portforward.Processor$Copier.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+2016-02-25T21:31:38,526 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:31:38,530 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=35514,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2626])
+2016-02-25T21:31:38,536 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2626] to Socket[addr=/192.168.42.129,port=35514,localport=8080])
+2016-02-25T21:31:38,541 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:11,497 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:11,500 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51744,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2627])
+2016-02-25T21:33:11,505 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2627] to Socket[addr=/192.168.42.129,port=51744,localport=8080])
+2016-02-25T21:33:11,510 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:11,669 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:11,673 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51745,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2628])
+2016-02-25T21:33:11,680 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2628] to Socket[addr=/192.168.42.129,port=51745,localport=8080])
+2016-02-25T21:33:11,685 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:11,688 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:11,693 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51746,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2629])
+2016-02-25T21:33:11,699 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2629] to Socket[addr=/192.168.42.129,port=51746,localport=8080])
+2016-02-25T21:33:11,705 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:11,708 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:11,711 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51747,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2630])
+2016-02-25T21:33:11,717 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2630] to Socket[addr=/192.168.42.129,port=51747,localport=8080])
+2016-02-25T21:33:11,723 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:11,726 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:11,731 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51748,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2631])
+2016-02-25T21:33:11,736 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2631] to Socket[addr=/192.168.42.129,port=51748,localport=8080])
+2016-02-25T21:33:11,742 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:11,745 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:11,749 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51749,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2632])
+2016-02-25T21:33:11,754 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2632] to Socket[addr=/192.168.42.129,port=51749,localport=8080])
+2016-02-25T21:33:11,759 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:11,761 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:11,764 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51750,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2633])
+2016-02-25T21:33:11,770 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2633] to Socket[addr=/192.168.42.129,port=51750,localport=8080])
+2016-02-25T21:33:11,776 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:11,779 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:11,782 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51751,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2634])
+2016-02-25T21:33:11,787 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2634] to Socket[addr=/192.168.42.129,port=51751,localport=8080])
+2016-02-25T21:33:11,791 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:11,793 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:11,797 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51752,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2635])
+2016-02-25T21:33:11,802 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2635] to Socket[addr=/192.168.42.129,port=51752,localport=8080])
+2016-02-25T21:33:11,807 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:11,810 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:11,813 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51753,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2636])
+2016-02-25T21:33:11,818 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2636] to Socket[addr=/192.168.42.129,port=51753,localport=8080])
+2016-02-25T21:33:11,823 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:11,826 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:11,829 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51754,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2637])
+2016-02-25T21:33:11,833 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2637] to Socket[addr=/192.168.42.129,port=51754,localport=8080])
+2016-02-25T21:33:11,838 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:11,841 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:11,844 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51755,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2638])
+2016-02-25T21:33:11,849 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2638] to Socket[addr=/192.168.42.129,port=51755,localport=8080])
+2016-02-25T21:33:11,854 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:13,730 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:13,734 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51756,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2639])
+2016-02-25T21:33:13,740 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2639] to Socket[addr=/192.168.42.129,port=51756,localport=8080])
+2016-02-25T21:33:13,744 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:14,338 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:14,342 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51757,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2640])
+2016-02-25T21:33:14,347 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2640] to Socket[addr=/192.168.42.129,port=51757,localport=8080])
+2016-02-25T21:33:14,352 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:14,393 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:14,397 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51758,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2641])
+2016-02-25T21:33:14,402 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2641] to Socket[addr=/192.168.42.129,port=51758,localport=8080])
+2016-02-25T21:33:14,407 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:21,251 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:21,255 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51759,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2642])
+2016-02-25T21:33:21,260 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2642] to Socket[addr=/192.168.42.129,port=51759,localport=8080])
+2016-02-25T21:33:21,265 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:21,558 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:21,562 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51760,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2643])
+2016-02-25T21:33:21,568 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2643] to Socket[addr=/192.168.42.129,port=51760,localport=8080])
+2016-02-25T21:33:21,573 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:21,576 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:21,580 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51761,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2644])
+2016-02-25T21:33:21,584 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2644] to Socket[addr=/192.168.42.129,port=51761,localport=8080])
+2016-02-25T21:33:21,590 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:21,592 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:21,596 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51762,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2645])
+2016-02-25T21:33:21,602 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2645] to Socket[addr=/192.168.42.129,port=51762,localport=8080])
+2016-02-25T21:33:21,609 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:21,612 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:21,615 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51763,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2646])
+2016-02-25T21:33:21,623 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2646] to Socket[addr=/192.168.42.129,port=51763,localport=8080])
+2016-02-25T21:33:21,629 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:21,631 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:21,634 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51764,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2647])
+2016-02-25T21:33:21,640 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2647] to Socket[addr=/192.168.42.129,port=51764,localport=8080])
+2016-02-25T21:33:21,645 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:21,647 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:21,650 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51765,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2648])
+2016-02-25T21:33:21,655 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2648] to Socket[addr=/192.168.42.129,port=51765,localport=8080])
+2016-02-25T21:33:21,660 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:21,663 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:21,666 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51766,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2649])
+2016-02-25T21:33:21,670 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2649] to Socket[addr=/192.168.42.129,port=51766,localport=8080])
+2016-02-25T21:33:21,675 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:21,677 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:21,681 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51767,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2650])
+2016-02-25T21:33:21,686 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2650] to Socket[addr=/192.168.42.129,port=51767,localport=8080])
+2016-02-25T21:33:21,691 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:21,693 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:21,696 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51768,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2651])
+2016-02-25T21:33:21,702 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2651] to Socket[addr=/192.168.42.129,port=51768,localport=8080])
+2016-02-25T21:33:21,706 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:21,708 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:21,711 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51769,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2652])
+2016-02-25T21:33:21,716 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2652] to Socket[addr=/192.168.42.129,port=51769,localport=8080])
+2016-02-25T21:33:21,722 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:21,725 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:21,729 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51770,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2653])
+2016-02-25T21:33:21,734 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2653] to Socket[addr=/192.168.42.129,port=51770,localport=8080])
+2016-02-25T21:33:21,739 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:40,941 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:40,945 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51771,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2654])
+2016-02-25T21:33:40,950 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2654] to Socket[addr=/192.168.42.129,port=51771,localport=8080])
+2016-02-25T21:33:40,955 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:41,001 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:41,005 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51772,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2655])
+2016-02-25T21:33:41,010 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2655] to Socket[addr=/192.168.42.129,port=51772,localport=8080])
+2016-02-25T21:33:41,015 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:41,855 DEBUG Thread-88 com.sharneng.net.portforward.Processor - com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2652] to Socket[addr=/192.168.42.129,port=51769,localport=8080])
+java.net.SocketException: Software caused connection abort: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at com.sharneng.io.IOUtils.copyStream(Unknown Source)
+	at com.sharneng.net.portforward.Processor$Copier.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+2016-02-25T21:33:41,872 DEBUG Thread-72 com.sharneng.net.portforward.Processor - com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2644] to Socket[addr=/192.168.42.129,port=51761,localport=8080])
+java.net.SocketException: Software caused connection abort: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at com.sharneng.io.IOUtils.copyStream(Unknown Source)
+	at com.sharneng.net.portforward.Processor$Copier.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+2016-02-25T21:33:41,890 DEBUG Thread-74 com.sharneng.net.portforward.Processor - com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2645] to Socket[addr=/192.168.42.129,port=51762,localport=8080])
+java.net.SocketException: Software caused connection abort: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at com.sharneng.io.IOUtils.copyStream(Unknown Source)
+	at com.sharneng.net.portforward.Processor$Copier.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+2016-02-25T21:33:41,910 DEBUG Thread-76 com.sharneng.net.portforward.Processor - com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2646] to Socket[addr=/192.168.42.129,port=51763,localport=8080])
+java.net.SocketException: Software caused connection abort: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at com.sharneng.io.IOUtils.copyStream(Unknown Source)
+	at com.sharneng.net.portforward.Processor$Copier.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+2016-02-25T21:33:41,929 DEBUG Thread-78 com.sharneng.net.portforward.Processor - com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2647] to Socket[addr=/192.168.42.129,port=51764,localport=8080])
+java.net.SocketException: Software caused connection abort: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at com.sharneng.io.IOUtils.copyStream(Unknown Source)
+	at com.sharneng.net.portforward.Processor$Copier.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+2016-02-25T21:33:42,442 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:42,446 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51773,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2656])
+2016-02-25T21:33:42,453 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2656] to Socket[addr=/192.168.42.129,port=51773,localport=8080])
+2016-02-25T21:33:42,458 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-02-25T21:33:42,488 DEBUG Thread-93 com.sharneng.net.portforward.Processor - com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51772,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2655])
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:196)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at java.net.SocketInputStream.read(SocketInputStream.java:108)
+	at com.sharneng.io.IOUtils.copyStream(Unknown Source)
+	at com.sharneng.net.portforward.Processor$Copier.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+2016-02-25T21:33:42,534 DEBUG Thread-94 com.sharneng.net.portforward.Processor - com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2655] to Socket[addr=/192.168.42.129,port=51772,localport=8080])
+java.net.SocketException: Connection reset by peer: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at com.sharneng.io.IOUtils.copyStream(Unknown Source)
+	at com.sharneng.net.portforward.Processor$Copier.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+2016-02-25T21:33:43,021 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-02-25T21:33:43,025 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=57255,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=2657])
+2016-02-25T21:33:43,030 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=2657] to Socket[addr=/192.168.42.129,port=57255,localport=8080])
+2016-02-25T21:33:43,035 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:01:59,226 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing for [root] with value=[TRACE, rolling, stdout].
+2016-04-06T23:01:59,298 DEBUG main org.apache.log4j.PropertyConfigurator - Level token is [TRACE].
+2016-04-06T23:01:59,299 DEBUG main org.apache.log4j.PropertyConfigurator - Category root set to TRACE.
+2016-04-06T23:01:59,299 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing appender named "rolling".
+2016-04-06T23:01:59,371 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing layout options for "rolling".
+2016-04-06T23:01:59,553 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [conversionPattern] to [%d{yyyy-MM-dd'T'HH:mm:ss,SSS} %p %t %c - %m%n].
+2016-04-06T23:01:59,966 DEBUG main org.apache.log4j.PropertyConfigurator - End of parsing for "rolling".
+2016-04-06T23:01:59,971 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [maxFileSize] to [10MB].
+2016-04-06T23:01:59,972 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [maxBackupIndex] to [10].
+2016-04-06T23:01:59,972 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [file] to [portforward.log].
+2016-04-06T23:01:59,991 DEBUG main org.apache.log4j.rolling.RollingFileAppender - setFile called: portforward.log, true
+2016-04-06T23:01:59,991 DEBUG main org.apache.log4j.rolling.RollingFileAppender - setFile ended
+2016-04-06T23:01:59,991 DEBUG main org.apache.log4j.PropertyConfigurator - Parsed "rolling" options.
+2016-04-06T23:01:59,991 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing appender named "stdout".
+2016-04-06T23:01:59,994 DEBUG main org.apache.log4j.PropertyConfigurator - Parsing layout options for "stdout".
+2016-04-06T23:01:59,994 DEBUG main org.apache.log4j.config.PropertySetter - Setting property [conversionPattern] to [%5p [%t] (%F:%L) - %m%n].
+2016-04-06T23:02:00,009 DEBUG main org.apache.log4j.PropertyConfigurator - End of parsing for "stdout".
+2016-04-06T23:02:00,009 DEBUG main org.apache.log4j.PropertyConfigurator - Parsed "stdout" options.
+2016-04-06T23:02:00,009 DEBUG main org.apache.log4j.PropertyConfigurator - Finished configuring.
+2016-04-06T23:02:00,351 INFO main com.sharneng.net.portforward.Listener - Ready to accept client connection on 0.0.0.0:8080
+2016-04-06T23:02:00,358 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:04:05,965 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:04:06,047 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60368,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1274])
+2016-04-06T23:04:06,054 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1274] to Socket[addr=/192.168.42.129,port=60368,localport=8080])
+2016-04-06T23:04:06,059 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:04:06,314 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:04:06,319 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60369,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1275])
+2016-04-06T23:04:06,325 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1275] to Socket[addr=/192.168.42.129,port=60369,localport=8080])
+2016-04-06T23:04:06,331 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:04:06,334 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:04:06,338 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60370,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1276])
+2016-04-06T23:04:06,345 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1276] to Socket[addr=/192.168.42.129,port=60370,localport=8080])
+2016-04-06T23:04:06,351 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:04:06,354 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:04:06,359 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60371,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1277])
+2016-04-06T23:04:06,366 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1277] to Socket[addr=/192.168.42.129,port=60371,localport=8080])
+2016-04-06T23:04:06,373 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:04:06,378 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:04:06,383 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60372,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1278])
+2016-04-06T23:04:06,390 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1278] to Socket[addr=/192.168.42.129,port=60372,localport=8080])
+2016-04-06T23:04:06,396 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:04:06,398 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:04:06,402 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60373,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1279])
+2016-04-06T23:04:06,408 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1279] to Socket[addr=/192.168.42.129,port=60373,localport=8080])
+2016-04-06T23:04:06,413 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:04:06,415 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:04:06,419 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60374,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1280])
+2016-04-06T23:04:06,425 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1280] to Socket[addr=/192.168.42.129,port=60374,localport=8080])
+2016-04-06T23:04:06,431 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:04:06,433 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:04:06,437 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60375,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1281])
+2016-04-06T23:04:06,443 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1281] to Socket[addr=/192.168.42.129,port=60375,localport=8080])
+2016-04-06T23:04:06,449 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:04:06,451 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:04:06,454 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60376,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1282])
+2016-04-06T23:04:06,460 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1282] to Socket[addr=/192.168.42.129,port=60376,localport=8080])
+2016-04-06T23:04:06,466 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:04:06,468 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:04:06,472 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60377,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1283])
+2016-04-06T23:04:06,478 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1283] to Socket[addr=/192.168.42.129,port=60377,localport=8080])
+2016-04-06T23:04:06,484 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:04:06,487 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:04:06,491 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60378,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1284])
+2016-04-06T23:04:06,496 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1284] to Socket[addr=/192.168.42.129,port=60378,localport=8080])
+2016-04-06T23:04:06,506 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:04:06,513 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:04:06,516 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60379,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1285])
+2016-04-06T23:04:06,522 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1285] to Socket[addr=/192.168.42.129,port=60379,localport=8080])
+2016-04-06T23:04:06,528 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:04:08,227 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:04:08,232 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60380,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1286])
+2016-04-06T23:04:08,238 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1286] to Socket[addr=/192.168.42.129,port=60380,localport=8080])
+2016-04-06T23:04:08,242 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:04:08,264 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:04:08,268 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60381,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1287])
+2016-04-06T23:04:08,276 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1287] to Socket[addr=/192.168.42.129,port=60381,localport=8080])
+2016-04-06T23:04:08,281 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:08:09,911 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:08:09,914 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60386,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1288])
+2016-04-06T23:08:09,915 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1288] to Socket[addr=/192.168.42.129,port=60386,localport=8080])
+2016-04-06T23:08:09,915 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:08:10,408 DEBUG Thread-30 com.sharneng.net.portforward.Processor - com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1288] to Socket[addr=/192.168.42.129,port=60386,localport=8080])
+java.net.SocketException: Connection reset by peer: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(Unknown Source)
+	at java.net.SocketOutputStream.write(Unknown Source)
+	at com.sharneng.io.IOUtils.copyStream(Unknown Source)
+	at com.sharneng.net.portforward.Processor$Copier.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2016-04-06T23:08:10,410 DEBUG Thread-29 com.sharneng.net.portforward.Processor - com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60386,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1288])
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at com.sharneng.io.IOUtils.copyStream(Unknown Source)
+	at com.sharneng.net.portforward.Processor$Copier.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2016-04-06T23:08:11,047 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:08:11,049 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=51013,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1289])
+2016-04-06T23:08:11,050 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1289] to Socket[addr=/192.168.42.129,port=51013,localport=8080])
+2016-04-06T23:08:11,050 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:09:15,582 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:09:15,585 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60389,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1290])
+2016-04-06T23:09:15,586 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1290] to Socket[addr=/192.168.42.129,port=60389,localport=8080])
+2016-04-06T23:09:15,586 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
+2016-04-06T23:09:15,770 DEBUG Thread-34 com.sharneng.net.portforward.Processor - com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1290] to Socket[addr=/192.168.42.129,port=60389,localport=8080])
+java.net.SocketException: Connection reset by peer: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(Unknown Source)
+	at java.net.SocketOutputStream.write(Unknown Source)
+	at com.sharneng.io.IOUtils.copyStream(Unknown Source)
+	at com.sharneng.net.portforward.Processor$Copier.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2016-04-06T23:09:15,771 DEBUG Thread-33 com.sharneng.net.portforward.Processor - com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=60389,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1290])
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at com.sharneng.io.IOUtils.copyStream(Unknown Source)
+	at com.sharneng.net.portforward.Processor$Copier.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2016-04-06T23:09:16,291 TRACE main com.sharneng.net.portforward.Listener - accepted client connection
+2016-04-06T23:09:16,293 TRACE main com.sharneng.net.portforward.Processor - started new request stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/192.168.42.129,port=52601,localport=8080] to Socket[addr=/127.0.0.1,port=60510,localport=1291])
+2016-04-06T23:09:16,293 TRACE main com.sharneng.net.portforward.Processor - started new response stream copier threads: com.sharneng.net.portforward.Processor$Copier(from Socket[addr=/127.0.0.1,port=60510,localport=1291] to Socket[addr=/192.168.42.129,port=52601,localport=8080])
+2016-04-06T23:09:16,294 TRACE main com.sharneng.net.portforward.TargetConnector - new ServerConnectionManager( InetSocketAddress )
