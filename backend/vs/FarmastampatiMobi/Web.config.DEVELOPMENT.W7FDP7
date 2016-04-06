@@ -1,0 +1,44 @@
+﻿<?xml version="1.0"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+
+  <connectionStrings>
+    <add name="farmadati"
+		    connectionString="server=(local); database=DBFarmadati_WEB; Integrated Security=true;" />
+  </connectionStrings>
+
+  <system.web>
+    <compilation debug="true" targetFramework="4.0"/>
+    <httpHandlers>
+      <add verb="*" path="archive" type="webapp.ArchiveHttpHandler"/>
+      <add verb="*" path="autocom" type="webapp.AutocompleteHttpHandler"/>
+      <add verb="*" path="mail" type="webapp.MailHttpHandler"/>
+      <add verb="*" path="pages/*" type="webapp.PagesHttpHandler"/>
+      <add verb="*" path="query" type="webapp.SqlHttpHandler"/>
+    </httpHandlers>
+  </system.web>
+
+  <appSettings>
+
+    <add key="documentRoot" value="Y:\Documents\FarmastampatiMobi\docs\sources"/>
+    <add key="outputPath" value="C:\Temp"/>
+    <add key="gsPath" value="C:\Program Files\gs\gs9.10\bin\gswin64c.exe"/>
+    <add key="logFile" value="C:\Temp\FarmastampatiMobi.log"/>
+
+    <add key="mailFrom" value="noreply@farmastampati.it"/>
+    <add key="mailSubject" value="Foglio Illustrativo"/>
+    <add key="mailSmtpServer" value="smtp.farmastampati.it"/>
+    <add key="mailSmtpUser" value="noreply@farmastampati.it"/>
+    <add key="mailSmtpPassword" value="bugiardino2015"/>
+    <add key="mailSmtpPort" value="25"/>
+    <add key="mailSmtpRequireSSL" value="false"/>
+    <add key="mailSmtpTimeout" value="15000"/>
+    <add key="mailBody" value=".\mailbody.html"/>
+    <add key="mailBodyBaseUrl" value="http://www.farmastampati.mobi/FarmastampatiMobi"/>
+
+  </appSettings>
+
+</configuration>

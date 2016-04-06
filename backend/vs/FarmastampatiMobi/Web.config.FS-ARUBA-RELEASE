@@ -1,0 +1,73 @@
+﻿<?xml version="1.0"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+  <connectionStrings>
+    <add name="farmadati" connectionString="server=WINDOWS2012R2; database=DBFarmadati_WEB; user id=UserSetDati2; password=Customers1987;"/>
+  </connectionStrings>
+  <system.web>
+    <customErrors mode="Off"/>
+    
+    <compilation debug="true" targetFramework="4.0"/>
+    <httpHandlers>
+<!--
+      <add verb="*" path="archive" type="webapp.ArchiveHttpHandler"/>
+      <add verb="*" path="autocom" type="webapp.AutocompleteHttpHandler"/>
+      <add verb="*" path="mail" type="webapp.MailHttpHandler"/>
+      <add verb="*" path="pages/*" type="webapp.PagesHttpHandler"/>
+      <add verb="*" path="query" type="webapp.SqlHttpHandler"/>
+-->
+      <add verb="*" path="archive" type="webapp.ArchiveHttpHandler"/>
+      <add verb="*" path="autocom" type="webapp.AutocompleteHttpHandler"/>
+      <add verb="*" path="mail" type="webapp.MailHttpHandler"/>
+      <add verb="*" path="pages/*" type="webapp.PagesHttpHandler"/>
+      <add verb="*" path="query" type="webapp.SqlHttpHandler"/>
+      <add verb="*" path="auto2" type="webapp.Autocomplete2HttpHandler"/>
+    </httpHandlers>
+  </system.web>
+  <appSettings>
+    <!-- 
+        ////////////////////////////////////////////////////////////////////
+        //        
+        // General Application Settings 
+        //
+        //
+        ////////////////////////////////////////////////////////////////////
+        -->
+    <!-- Directory where all pdf files are stored (MANDATORY) -->
+    <add key="documentRoot" value="C:\ftp\Archivio_F"/>
+    <!-- The directory where to store png generated cache files (MANDATORY) -->
+    <add key="outputPath" value="C:\Temp"/>
+    <!-- ghostscript path if not specified, ensure you set it into your system path -->
+    <add key="gsPath" value="C:\bin\gs9.10\gswin64c.exe"/>
+    <!-- Log file for debug purposes
+         WARNING: Comment logFile setting in production environment
+         Use it only for debug purposes. Logger still experimental. (OPTIONAL) -->
+    <add key="logFile" value="D:\Temp\FarmastampatiMobi.log"/>
+    <!-- 
+        ////////////////////////////////////////////////////////////////////
+        //        
+        // Email configuration 
+        // Comment this section to disable mail service
+        //
+        ////////////////////////////////////////////////////////////////////        
+        -->
+    <!-- smtp settings -->
+    <add key="mailFrom" value="noreply@farmastampati.it"/>
+    <add key="mailSubject" value="Foglio Illustrativo"/>
+    <add key="mailSmtpServer" value="smtp.farmastampati.it"/>
+    <add key="mailSmtpUser" value="noreply@farmastampati.it"/>
+    <add key="mailSmtpPassword" value="bugiardino2015"/>
+    <add key="mailSmtpPort" value="25"/>
+    <add key="mailSmtpRequireSSL" value="false"/>
+    <add key="mailSmtpTimeout" value="15000"/>
+    <!-- html body of the -->
+    <add key="mailBody" value=".\mailbody.html"/>
+    <!--
+    <add key="mailBodyBaseUrl" value="http://46.37.30.196/FarmastampatiMobi"/>
+      -->
+    <add key="zbarimg" value="C:\bin\zbar\zbarimg.exe"/>
+  </appSettings>
+</configuration>
