@@ -1,0 +1,1 @@
+convert -coalesce 404.gif -gravity NorthWest -draw "Image Over 0,0 0,0 farmast.png" 404.gif

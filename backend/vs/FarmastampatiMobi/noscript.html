@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!--
+    <meta name="viewport" 
+        content="initial-scale=1.0,width=device-width,user-scalable=1" />        
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;">
+    -->
+        
+    <title>Foglio Illustrativo</title>
+        
+    
+    <style type="text/css">
+    .body {
+        font-family: Verdana;
+        font-size: 14px;
+    }
+    .ui-filter-inset {
+        margin-top: 0;
+    }
+    </style>
+
+    <!-- Page Scripting -->
+    <script type="text/javascript" src="dh3.js"></script>
+        
+</head>
+
+<body>
+
+<center>
+      
+    <!-- BEGIN LOGO HEADER AND TITLE -->
+    <img alt="Farmastampati Logo" src="images/farmast.png"/><br />
+    <span style="font-style: italic;">Visualizza il foglio illustrativo</span><br /><br />
+    <!-- END -->
+
+    <form method="post" action="/noscript.aspx?language=it">
+        
+        <span style="font-weight: bolder;">Inserisci il Codice AIC</span><br/>
+        <input type="text" name="aic" maxlength="10" />
+
+        <br />
+        <br />
+        <input type="submit" name="submit" value="Cerca" style="width: 180px;"/>    
+        
+        <br />
+        <br />
+        <input type="submit" name="submit" value="Che cosa &egrave; il codice AIC" style="width: 180px;"/>    
+
+    </form>
+
+</center>
+
+</body>
+
+</html>

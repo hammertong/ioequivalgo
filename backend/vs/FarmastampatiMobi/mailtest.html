@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>Minimalist Email Tester</title>
+	<meta name="viewport" 
+        content="initial-scale=1.0,width=device-width,user-scalable=0" />
+    <!-- JQuery Libraries -->
+    <link rel="stylesheet" href="js/jquery.mobile-1.4.5.min.css"/>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<center>
+
+	<h1>Mail Test</h1>
+
+	<form method="POST" action="mail" data-ajax="false">
+
+		<table>
+
+			<tr>
+				<td colspan="4">
+					<h3>Server Configuration</h3>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					From
+				</td>
+				<td>
+					<input type="text" name="mailFrom" value="farmastampati@farmadati.it" size="40"/>
+				</td>
+				<td>
+					&nbsp;
+				</td>
+				<td>
+					<input type="submit" value="Test mail delivery"/>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					Server
+				</td>
+				<td>
+					<input type="text" name="mailSmtpServer" value="smtp.inet.it"/>
+				</td>
+				<td align="right">
+					Port
+				</td>
+				<td>
+					<input type="text" name="mailSmtpPort" value="25"/>
+				</td>
+			</tr>			
+
+			<tr>
+				<td>
+					Require SSL
+				</td>
+				<td>
+					<input type="checkbox" name="mailSmtpRequireSSL" value="true" />
+				</td>
+				<td align="right">
+					SMTP Timeout
+				</td>
+				<td>
+					<input type="text" name="mailSmtpTimeout" value="15000"/>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					User
+				</td>
+				<td>
+					<input type="text" name="mailSmtpUser" value="farmastampati@farmadati.it"/>
+				</td>
+				<td align="right">
+					Password
+				</td>
+				<td>
+					<input type="password" name="mailSmtpPassword" value="1Guan@321!"/>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="4">
+					<h3>Request Parameters</h3>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					Pharmacy
+				</td>
+				<td>
+					<input type="text" name="pharmacy" value="12345"/>
+				</td>
+				<td align="right">
+					Mailbox
+				</td>
+				<td>
+					<input type="text" name="mailbox" value="montini.f@gmail.com"/>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					AIC
+				</td>
+				<td>
+					<input type="text" name="aic" value="019995036"/>
+				</td>
+				<td align="right">
+					Language
+				</td>
+				<td>
+					<input type="text" name="lang" value="it"/>
+				</td>
+			</tr>
+
+		</table>
+
+	</form>	
+
+</center>
+
+</body>	
+
+</html>

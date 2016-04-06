@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98611772-E83A-4EAD-A6B8-CAB53999BFF9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>webapp</RootNamespace>
+    <AssemblyName>FarmastampatiMobi</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="aicsample2.jpg" />
+    <Content Include="default.aspx" />
+    <Content Include="dh0.aspx" />
+    <Content Include="dh0.js" />
+    <Content Include="dh1.aspx" />
+    <Content Include="dh1.js" />
+    <Content Include="dh2.aspx" />
+    <Content Include="dh2.js" />
+    <Content Include="dh3.aspx" />
+    <Content Include="dh3.js" />
+    <Content Include="Global.asax" />
+    <Content Include="images\404.gif" />
+    <Content Include="images\aicsample.jpg" />
+    <Content Include="images\aicsample.png" />
+    <Content Include="images\aicsample2.jpg" />
+    <Content Include="images\apple-touch-startup-image-320x460.png" />
+    <Content Include="images\cn.png" />
+    <Content Include="images\de.png" />
+    <Content Include="images\en.png" />
+    <Content Include="images\es.png" />
+    <Content Include="images\farmadati-apple-icon.png" />
+    <Content Include="images\farmadati.png" />
+    <Content Include="images\farmast-logo.png" />
+    <Content Include="images\farmast.png" />
+    <None Include="js\jquery.mobile-1.4.2.min.map" />
+    <None Include="libs\itextsharp.dll" />
+    <Content Include="images\fr.png" />
+    <Content Include="images\howto-apply-logo-to-animated-gif.txt" />
+    <Content Include="images\is.png" />
+    <Content Include="images\it.png" />
+    <Content Include="images\launcher-icon-0-75x.png" />
+    <Content Include="images\launcher-icon-1-5x.png" />
+    <Content Include="images\launcher-icon-1x.png" />
+    <Content Include="images\launcher-icon-2x.png" />
+    <Content Include="images\launcher-icon-3x.png" />
+    <Content Include="images\launcher-icon-4x.png" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\menu.png" />
+    <Content Include="install.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="iphone56-ss1.png" />
+    <Content Include="iphone56-ss2.png" />
+    <Content Include="iphone56-ss3.png" />
+    <Content Include="iphone56.html" />
+    <Content Include="js\bookmark_bubble.js" />
+    <Content Include="js\bookmark_bubble_activator.js" />
+    <Content Include="js\bookmark_bubble_jquery.css" />
+    <Content Include="js\bookmark_bubble_jquery.js" />
+    <Content Include="js\bookmark_bubble_jquery.min.js" />
+    <Content Include="js\bookmark_bubble_msg_it.js" />
+    <Content Include="js\images\ajax-loader.gif" />
+    <Content Include="js\jquery-1.10.2.min.js" />
+    <Content Include="js\jquery-1.11.3.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery.mobile-1.4.2.css" />
+    <Content Include="js\jquery.mobile-1.4.2.js" />
+    <Content Include="js\jquery.mobile-1.4.2.min.css" />
+    <Content Include="js\jquery.mobile-1.4.2.min.js" />
+    <Content Include="js\jquery.mobile-1.4.5.min.css" />
+    <Content Include="js\jquery.mobile-1.4.5.min.js" />
+    <Content Include="js\jquery.mobile.external-png-1.4.2.css" />
+    <Content Include="js\jquery.mobile.external-png-1.4.2.min.css" />
+    <Content Include="js\jquery.mobile.icons-1.4.2.css" />
+    <Content Include="js\jquery.mobile.icons-1.4.2.min.css" />
+    <Content Include="js\jquery.mobile.inline-png-1.4.2.css" />
+    <Content Include="js\jquery.mobile.inline-png-1.4.2.min.css" />
+    <Content Include="js\jquery.mobile.inline-svg-1.4.2.css" />
+    <Content Include="js\jquery.mobile.inline-svg-1.4.2.min.css" />
+    <Content Include="js\jquery.mobile.min.css" />
+    <Content Include="js\jquery.mobile.min.js" />
+    <Content Include="js\jquery.mobile.structure-1.4.2.css" />
+    <Content Include="js\jquery.mobile.structure-1.4.2.min.css" />
+    <Content Include="js\jquery.mobile.theme-1.4.2.css" />
+    <Content Include="js\jquery.mobile.theme-1.4.2.min.css" />
+    <Content Include="js\jquery.mousewheel.js" />
+    <Content Include="js\jquery.panzoom.js" />
+    <Content Include="launcher-icon-0-75x.png" />
+    <Content Include="launcher-icon-1-5x.png" />
+    <Content Include="launcher-icon-1x.png" />
+    <Content Include="launcher-icon-2x.png" />
+    <Content Include="launcher-icon-3x.png" />
+    <Content Include="launcher-icon-4x.png" />
+    <Content Include="mailbody.html" />
+    <Content Include="mailtest.html" />
+    <Content Include="noscript.html" />
+    <Content Include="popup-dialog.html" />
+    <Content Include="popup.html" />
+    <Content Include="popup2.html" />
+    <Content Include="redirect.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="manifest.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="src\ArchiveHttpHandler.cs" />
+    <Compile Include="src\Autocomplete2HttpHandler.cs" />
+    <Compile Include="src\AutocompleteHttpHandler.cs" />
+    <Compile Include="src\SqlHttpHandler.cs" />
+    <Compile Include="src\Tools.cs" />
+    <Compile Include="src\GhostscriptWrapper.cs" />
+    <Compile Include="src\Logger.cs" />
+    <Compile Include="src\PagesHttpHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\MailHttpHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49636</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

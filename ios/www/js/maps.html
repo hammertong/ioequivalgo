@@ -1,0 +1,112 @@
+
+<script>
+
+var map = {
+
+	data: [ '' ],
+    
+	index: [ '' ],
+	
+	put: function (key, value) {		
+		for (var i = 1; this.data.length > 1 
+				&& i < this.data.length; i += 2) {
+			if (this.data[i] == key) {
+				this.data[i + 1] = value;
+				return;
+			}
+		}
+		this.data[this.data.length] = key;
+		this.data[this.data.length] = value;
+	},
+
+	get: function (key) {		
+		for (var i = 1; this.data.length > 1 
+				&& i < this.data.length; i += 2) {
+			if (this.data[i] == key) {
+				return this.data[i + 1];
+			}
+		}
+		return null;
+	},
+	
+	remove: function (key) {		
+		for (var i = 1; this.data.length > 1 
+				&& i < this.data.length; i += 2) {
+			if (this.data[i] == key) {
+				for (j = i; j < this.data.length - 2; j += 2) {	
+					this.data[j] = this.data[j + 2];
+					this.data[j + 1] = this.data[j + 3];
+				}				
+				this.data = this.data.slice(0, this.data.length - 2);				
+				return;
+			}
+		}		
+	},
+	
+	length: function () {		
+		return (this.data.length > 1 ? ((this.data.length - 1) / 2) : 0);
+	},
+	
+	sort: function () {
+		for (var i = 1; this.data.length > 1 
+				&& i < this.data.length; i += 2) {
+			this.index[(i - 1) / 2] = this.data[i];			
+		}
+		this.index.sort(
+			function (a, b) {					
+				var n = b.charCodeAt(0) - a.charCodeAt(0);			
+				return (n);
+			}	
+		);
+		//console.log("SORT :: " + JSON.stringify(this.index));						
+	},
+		
+	getSortedKey: function (i) {				
+		return (this.index[i]);
+	},	
+	
+	getSortedValue: function (i) {				
+		return (this.get(this.index[i]));
+	},
+    
+    clear: function() {
+        this.data = [ '' ];
+        this.index = [ '' ];
+    }
+
+	toString: function() {
+		return (JSON.stringify(this.index));
+	}
+}
+
+
+var m = map;
+
+console.log("count >>> " + m.length());
+
+m.put('a', 'new a');
+m.put('b', 'new b');
+m.put('b', 'set b');
+m.put('c', 'new c');
+
+console.log("get a >>> " + m.get('a'));
+console.log("get b >>> " + m.get('b'));
+console.log("get c >>> " + m.get('c'));
+console.log("count >>> " + m.length());
+
+console.log("removing b ...");
+
+m.remove('b');
+console.log("get a >>> " + m.get('a'));
+console.log("get b >>> " + m.get('b'));
+console.log("get c >>> " + m.get('c'));
+console.log("count >>> " + m.length());
+
+m.put('x', 'new x');
+m.put('z', 'new z');
+
+m.sort();
+console.log("sorted element at position 2 >>> " + m.getSortedKey(2) + " => " + m.getSortedValue(2));
+console.log(m.toString());
+
+</script>

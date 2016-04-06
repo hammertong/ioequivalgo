@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<data version="1.0">
+
+	<query name="autocompletaPrincipioAttivo">			
+		<!-- 
+			<sql>
+			<![CDATA[
+				select distinct top ? 'A|' + FDI_0364 
+				from APP_CA 
+				where APP_CA.FDI_0364 like ? 
+				and APP_CA.FDI_0021 in ('A', 'C', 'CN') 
+				order by 1 asc
+			]]>
+			</sql>
+			-->
+		<sql>
+		<![CDATA[
+			select distinct top ? 'C|' + FDI_0364 
+			from APP_CA 
+			where APP_CA.FDI_0364 like ? 
+				and APP_CA.FDI_0021 in ('A', 'C', 'CN') 				
+			order by 1 asc
+		]]>
+		</sql>
+	</query>
+	
+	<query name="autocompletaNomeFarmaco">			
+		<!-- 
+		<sql>
+		<![CDATA[				
+			select distinct top ? 'B|' + left(APP_CA.FDI_4875, charindex('*', APP_CA.FDI_4875) - 1) 
+			from APP_CA 
+			where APP_CA.FDI_4875 like ? 
+			and APP_CA.FDI_0021 in ('A', 'C', 'CN') 
+			order by 1 asc
+		]]>
+		</sql>
+		-->
+		<sql>
+		<![CDATA[				
+			select distinct top ? 'D|' + left(APP_CA.FDI_4875, charindex('*', APP_CA.FDI_4875) - 1) 
+			from APP_CA 
+			where APP_CA.FDI_4875 like ? 
+				and APP_CA.FDI_0021 in ('A', 'C', 'CN')						
+			order by 1 asc
+		]]>
+		</sql>
+	</query>
+		
+	<query name="cercaPerPrincipioAttivo">
+		<sql>
+		<![CDATA[				
+			select distinct 
+				APP_CA.FDI_0371 + substring(APP_CA.FDI_4875, CHARINDEX('*', APP_CA.FDI_4875), 300) as dx 
+			from APP_CA 
+			where APP_CA.FDI_0364 like ? 
+				and APP_CA.FDI_0021 in ('A', 'C', 'CN') 				
+			order by 1 asc
+		]]>
+		</sql>
+	</query>
+			
+	<query name="cercaGruppoPerPrincipioAttivo">			
+		<sql>	
+		<![CDATA[				
+			select distinct FDI_0001 as aic, 
+				FDI_0021 as classe, FDI_1010 as codeA, FDI_1094 as codeC 
+			from APP_CA 
+			where FDI_0364 like ? and FDI_4875 like ?
+		]]>
+		</sql>
+	</query>
+	
+	<query name="cercaGruppoPerDescrizioneEstesa">			
+		<sql>	
+		<![CDATA[							
+			select distinct FDI_0021 as classe, 
+				FDI_1010 as codeA, FDI_1094 as codeC				
+			from APP_CA 
+			where FDI_4875 like ?
+		]]>
+		</sql>
+	</query>
+	
+	<query name="cercaGruppoPerAIC">			
+		<!-- 
+			query invocata dalla scansione ottica del codice a barre			
+			-->
+		<sql>	
+		<![CDATA[				
+			select distinct FDI_0021 as classe, 
+				FDI_1010 as codeA, FDI_1094 as codeC,
+				LEFT(FDI_4875, CHARINDEX('*', FDI_4875) - 1) as descrizione,
+ 				substring(APP_CA.FDI_4875, CHARINDEX('*', APP_CA.FDI_4875) + 1, 300) as dosaggio
+			from APP_CA 
+			where FDI_0001 like ? 
+		]]>
+		</sql>
+	</query>
+	
+	<query name="cercaGruppoPerAIC_in">			
+		<!-- 
+			query invocata dalla scansione ottica del codice a barre			
+			-->
+		<sql>	
+		<![CDATA[				
+			select distinct FDI_0021 as classe, 
+				FDI_1010 as codeA, FDI_1094 as codeC,
+				LEFT(FDI_4875, CHARINDEX('*', FDI_4875) - 1) as descrizione,
+ 				substring(APP_CA.FDI_4875, CHARINDEX('*', APP_CA.FDI_4875) + 1, 300) as dosaggio
+			from APP_CA 
+			where FDI_0001 in ( ? )
+		]]>
+		</sql>
+	</query>
+
+	<query name="cercaDettagli">			
+		<sql>		
+		
+		<!--
+		<![CDATA[				
+			SELECT TOP ? 
+				APP_CA.FDI_0001 as codice,  
+				APP_CA.FDI_4875 as descrizione,  
+				APP_CA.FDI_0041 as ditta, 
+				APP_CA.FDI_0021 as classe, 
+				APP_CA.FDI_0371 as forma, 
+				CASE APP_CA.FDI_9238 WHEN 0 THEN 99999.99 ELSE APP_CA.FDI_9238 END as prezzoAlPubblico, 
+				CASE APP_CA.FDI_0491 WHEN 0 THEN 99999.99 ELSE APP_CA.FDI_0491 END as prezzoRimborsoNazionale, 
+				APP_CA.FDI_0364 as principioAttivoBase, 
+				APP_CA.FDI_0340 as principioAttivo, 
+				APP_CA.FDI_9159 as inListaDiTrasparenza, 
+				APP_CA.FDI_9172 as generico, 
+				APP_CA.FDI_9250 as brand, 
+				APP_CA.FDI_0012 as tipoRicetta 
+			FROM APP_CA 				
+			WHERE ? 
+			ORDER BY prezzoAlPubblico ASC, descrizione ASC
+		]]>
+		-->
+		
+		<![CDATA[
+			SELECT TOP ? 
+				APP_CA.FDI_0001 as codice,  
+				APP_CA.FDI_4875 as descrizione,  
+				APP_CA.FDI_0041 as ditta, 
+				APP_CA.FDI_0021 as classe, 
+				APP_CA.FDI_0371 as forma, 
+				CASE APP_CA.FDI_9238 WHEN 0 THEN 99999.99 ELSE APP_CA.FDI_9238 END as prezzoAlPubblico, 
+				CASE APP_CA.FDI_0491 WHEN 0 THEN 99999.99 ELSE APP_CA.FDI_0491 END as prezzoRimborsoNazionale, 
+				APP_CA.FDI_0364 as principioAttivoBase, 
+				APP_CA.FDI_0340 as principioAttivo, 
+				APP_CA.FDI_9159 as inListaDiTrasparenza, 
+				APP_CA.FDI_9172 as generico, 
+				APP_CA.FDI_9250 as brand, 
+				APP_CA.FDI_0012 as tipoRicetta
+			FROM APP_CA 
+			INNER JOIN TR025 ON APP_CA.FDI_0001 collate Latin1_General_CI_AS = TR025.FDI_T321
+			WHERE ? AND TR025.FDI_T324 = ? 
+			ORDER BY prezzoAlPubblico ASC, descrizione ASC
+		]]>
+
+		</sql>
+	</query>
+	
+	<query name="cercaDettagliSenzaUPS">			
+		<sql>				
+		
+		<![CDATA[
+			SELECT TOP ? 
+				APP_CA.FDI_0001 as codice,  
+				APP_CA.FDI_4875 as descrizione,  
+				APP_CA.FDI_0041 as ditta, 
+				APP_CA.FDI_0021 as classe, 
+				APP_CA.FDI_0371 as forma, 
+				CASE APP_CA.FDI_9238 WHEN 0 THEN 99999.99 ELSE APP_CA.FDI_9238 END as prezzoAlPubblico, 
+				CASE APP_CA.FDI_0491 WHEN 0 THEN 99999.99 ELSE APP_CA.FDI_0491 END as prezzoRimborsoNazionale, 
+				APP_CA.FDI_0364 as principioAttivoBase, 
+				APP_CA.FDI_0340 as principioAttivo, 
+				APP_CA.FDI_9159 as inListaDiTrasparenza, 
+				APP_CA.FDI_9172 as generico, 
+				APP_CA.FDI_9250 as brand, 
+				APP_CA.FDI_0012 as tipoRicetta
+			FROM APP_CA 			
+			WHERE ?
+			ORDER BY prezzoAlPubblico ASC, descrizione ASC
+		]]>
+
+		</sql>
+	</query>
+	
+	<query name="tabellaOrdinataDosaggiPerPA">			
+		<sql>	
+		<![CDATA[
+			SELECT 
+				TR028.FDI_T333 AS aic,
+				TR028.FDI_T334 AS id_par,
+				TR028.FDI_T335 AS id_seq,
+				TR028.FDI_T338 AS pas_qta,
+				TR028.FDI_T339 AS pas_um,
+				TR028.FDI_T340 AS pas_perc,
+				TR028.FDI_T342 AS pa_qta,
+				TR028.FDI_T343 AS pa_um,
+				TR028.FDI_T344 AS pa_perc,
+				TR025.FDI_T324 AS ups,
+				APP_CA.FDI_0371 AS forma
+			FROM TR028
+			INNER JOIN TR025 ON TR028.FDI_T333 collate Latin1_General_CI_AS = TR025.FDI_T321
+			INNER JOIN APP_CA ON TR028.FDI_T333 collate Latin1_General_CI_AS = APP_CA.FDI_0001
+			WHERE APP_CA.FDI_0364 LIKE ?
+				AND APP_CA.FDI_0021 in ('A', 'C', 'CN') 
+				AND TR028.FDI_T334 = 1
+				--AND TR025.FDI_T322 = 1
+				AND NOT (APP_CA.FDI_1010 IS NULL AND APP_CA.FDI_1094 IS NULL)
+			ORDER BY aic ASC, id_par ASC, id_seq ASC
+		]]>
+		</sql>
+	</query>
+	
+	<query name="tabellaOrdinataDosaggiPerNF">			
+		<sql>	
+		<![CDATA[
+			SELECT 
+				TR028.FDI_T333 AS aic,
+				TR028.FDI_T334 AS id_par,
+				TR028.FDI_T335 AS id_seq,
+				TR028.FDI_T338 AS pas_qta,
+				TR028.FDI_T339 AS pas_um,
+				TR028.FDI_T340 AS pas_perc,
+				TR028.FDI_T342 AS pa_qta,
+				TR028.FDI_T343 AS pa_um,
+				TR028.FDI_T344 AS pa_perc,
+				TR025.FDI_T324 AS ups,
+				APP_CA.FDI_0371 AS forma	
+			FROM TR028
+			INNER JOIN TR025 ON TR028.FDI_T333 collate Latin1_General_CI_AS = TR025.FDI_T321
+			INNER JOIN APP_CA ON TR028.FDI_T333 collate Latin1_General_CI_AS = APP_CA.FDI_0001
+			WHERE COALESCE (APP_CA.FDI_4875, APP_CA.FDI_0004) LIKE ? 
+				AND APP_CA.FDI_0021 in ('A', 'C', 'CN') 
+				AND TR028.FDI_T334 = 1
+				--AND TR025.FDI_T322 = 1
+				AND NOT (APP_CA.FDI_1010 IS NULL AND APP_CA.FDI_1094 IS NULL)
+			ORDER BY aic ASC, id_par ASC, id_seq ASC
+		]]>
+		</sql>
+	</query>
+		
+</data>

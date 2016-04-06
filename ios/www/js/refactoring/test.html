@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title>prove xml</title>
+	
+	<link rel="stylesheet" href="../jquery.mobile-1.4.5.min.css"/>        
+	<script type="text/javascript" src="../jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../jquery.mobile-1.4.5.min.js"></script>        
+	
+	<script type="text/javascript">
+	
+	
+	function getQuery(name)	{		
+		var r = null;	
+		xmlquery.find('query').each(
+			function() {			
+				var n = $(this).attr('name');
+				if (n.toLowerCase().trim() == name.toLowerCase().trim()) {										
+					return $(this).find('sql').each(
+						function() {							
+							r = { 
+								"sql": $(this).text().trim(), 
+								"encoding": $(this).attr('encoding')
+							}
+						}						
+					);
+				}			
+			}
+		);				
+		return r;		
+	}		
+
+	var xmlquery = null;
+	
+	$(document).ready(function(){		
+		$.ajax({
+			type: "GET", 
+			url: "data.xml",
+			dataType: "xml", 
+			success: function(xml){
+				xmlquery = $(xml);				
+			},
+			error: function() {
+				alert("An error occurred while loading backend queries from XML.");
+			}
+		});
+	});
+				
+	
+	function test(n) {
+		var s = getQuery(n);
+		alert(s.encoding + '\r\n' + s.sql);
+	}
+				
+	</script>
+</head>
+<body>
+
+<input type="button" onclick="test('cercaPerPrincipioAttivo')"></input>
+
+</body>
+</html>

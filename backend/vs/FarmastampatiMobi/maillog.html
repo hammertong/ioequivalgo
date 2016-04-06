@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>  
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mail Service Log</title>        
+    
+    <link rel="stylesheet" href="js/jquery.mobile-1.4.5.min.css"/> 
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script> 
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script> 
+        
+    <link rel="icon" type="image/png" href="images/farmadati-apple-icon.png">    
+
+    <style type="text/css">
+
+        .ui-filter-inset {
+            margin-top: 0;
+        }
+
+        @media print {
+            .pagebreak { page-break-after: always; }            
+        }
+		
+		boody {
+			font-size: 12px;
+			font-family: Verdana, Arial;					
+		}
+		
+		table {			
+			font-size: 12px;
+			font-family: Verdana, Arial;
+		}
+		
+		tr.head {
+			background: #000088;
+			color: #eeeeff;			
+		}
+		
+		th {
+			text-align: left;
+			padding: 10px;
+		}
+		
+		tr.ok {			
+			color: darkGreen;			
+		}
+		
+		tr.ko {			
+			color: darkRed;
+		}
+		
+		tr.alert {			
+			color: darkOrange;
+		}	
+		
+		td {
+			padding: 10px;						
+			text-align: left;
+		}
+		
+		td.plus {			
+			color: #888888;
+			font-weight: bolder;
+			cursor: pointer;
+		}
+		
+		hr {
+			color: #0000ee;
+		}
+
+    </style>
+    
+    <script type="text/javascript">
+	
+	//var ENDPOINT = "http://localhost:60510/";
+	//var ENDPOINT = "http://www.farmastampati.mobi/FarmastampatiMobi/";
+	var ENDPOINT = "";
+			
+	var lastId = null;		
+	
+	function toggle(id)
+	{
+		var h = $('#plus' + id).html();		
+		$('#plus' + id).html((h == '&#9658;' ? '&minus;' : '&#9658;'));
+		$('#row' + id).slideToggle();
+	}
+	
+	var count = 0;
+			
+	function poll(tmout)
+	{
+		$.ajax({                    
+
+            url: ENDPOINT + 'mail?stats=1',                        
+                                            
+            success: function (data) {
+                try {								
+                    
+					if (!data && data.length <= 0) return;                    
+                    
+					var n = 0;
+					while (n < data.length && data[n].id != lastId) {
+						n ++;
+					}
+										
+					lastId = data[0].id;
+					
+					for (var i = n - 1; i >= 0 ; i --) {    
+
+						var rec = data[i];
+						
+						var rowclass = "ok";
+						
+						if (rec.result != 'success') {
+							rowclass = "ko";
+						}
+						else if (rec.duration > 5) {
+							rowclass = "alert";
+						}
+						
+						count ++;
+						
+						$('#tablelog > tbody').prepend(							
+							'<tr class="' + rowclass + '">' +
+								'<td class="plus" id="plus' + count + '" onclick="toggle(\'' + count + '\')">&#9658;</td>' +
+								'<td>' + rec.time + '</td>' +
+								'<td>' + rec.host + '</td>' +
+								'<td>' + rec.duration + '</td>' +
+								'<td>' + rec.result + '</td>' +
+								'<td>' + rec.aic + '</td>' +
+								'<td>' + rec.mailbox + '</td>' +
+								'<td>' + rec.code+ '</td>' +
+								'<td nowrap>' + rec.statusdesc + '</td>' +								
+							'</tr>' +
+							'<tr id="row' + count + '" style="display: none;">' +
+								'<td>&nbsp;</td>' + 
+								'<td colspan="8">' +
+								'Pharmacy Id:' + rec.pharmacy + '<br/>' +
+								'Language:' + rec.language + '<br/>' +
+								'Http Status:' + rec.status + '<br/>' +								
+								'Transaction Id:' + rec.id + '<br/>' +
+								(rec.exception && rec.exception.length > 0 ? 
+									'Server Error::' + rec.exception : "") + 								
+								'</td>' +
+							'</tr>').
+							hide().fadeIn(700);
+							
+                    }   
+                }
+                catch (e1) {                        
+					if (console) console.log(e1);
+                }
+				
+				$('#lastupdate').html(new Date() + ' ' + data.length + ' ' + n);
+				setTimeout("poll(" + tmout + ")", tmout);
+            },
+
+            error: function (data) {
+				if (console) console.error(data);
+				setTimeout("poll(" + tmout + ")", tmout);
+            }
+
+        });
+	}	
+		
+	</script>
+        
+</head>
+
+<body oncontextmenu="return false;" onload="poll(5000)">
+
+	<h5>Mail Service Log</h5>
+	<i style="font-size: 10px;"><span id="lastupdate"></span></i>
+	<hr/>
+	
+	<table id="tablelog" cellspacing="0" cellpadding="0" width="100%">		
+		<thead>
+			<tr class="head">
+				<th>&nbsp;</th>
+				<th>TIMESTAMP</th>
+				<th>HOST</th>
+				<th>TIME</th>
+				<th>RESULT</th>
+				<th>AIC</th>
+				<th>MAILBOX</th>
+				<th>CODE</th>				
+				<th nowrap>STATUS MESSAGE</th>								
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	
+	
+	
+
+</body>
+
+</html>
+

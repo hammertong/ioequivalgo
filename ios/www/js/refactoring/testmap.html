@@ -1,0 +1,46 @@
+<script>
+
+///////////////////////////////////////////////////
+
+select FDI_T333 as aic, FDI_T335 as indexPA, FDI_T340 as codePA
+where FDI_T333 in ( ... ) 
+
+var selezione = {};
+
+selezione["compresse"] = 
+[ 
+	{
+		dosaggio: '10mg+20mg',
+		unit: [ 35, 20 ]
+	},
+	{ 
+		dosaggio: '25mg+44mg',
+		unit: [ 10, 20, 2, 89 ]
+	}
+]; 
+	
+selezione["bustine"] = 
+[ 
+	{ 
+		dosaggio: '56mg+19mg',
+		unit: [ 15, 20, 50, 34 ]
+	}
+]; 
+
+selezione["bustine"].sort(		
+	
+);
+
+alert (selezione["bustine"][0].dosaggio);
+
+</script>
+
+
+
+
+
+
+
+
+
+

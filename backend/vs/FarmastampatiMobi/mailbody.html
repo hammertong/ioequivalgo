@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<title>Farmastampati Italia</title>
+
+    <style>
+
+    body {
+        font-family: Verdana, Arial;            
+        font-size: 14px;
+        cursor: default;
+    }
+
+    .head {
+      background: green;
+      background-image: -webkit-linear-gradient(top, #00bb00, #007700);
+      background-image: -moz-linear-gradient(top, #00bb00, #007700);
+      background-image: -ms-linear-gradient(top, #00bb00, #007700);
+      background-image: -o-linear-gradient(top, #00bb00, #007700);
+      background-image: linear-gradient(to bottom, #00bb00, #007700);
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      border-radius: 0px;
+      font-family: Georgia;
+      color: #ffffff;
+      font-size: 22px;
+      padding: 10px 20px 10px 20px;      
+      text-decoration: none;
+    }   
+
+    hr {
+      border: 2px darkGreen solid;
+    }
+
+    sup {
+      font-size: xx-small;
+    }
+
+    a {      
+      color: #0000ee;
+      text-decoration: none;      
+    }
+
+    a:hover {
+      color: #7777ff;
+      text-decoration: underline;      
+    }
+
+    a:visited {
+      color: #0000ee;
+    }    
+
+    td {
+      padding-top: 10px;      
+    }
+
+    </style>
+</head>
+
+<body>	   
+
+    <table>
+        <tr> 
+            <td><span class="head">FarmaStampati<sup>&reg;</sup></span></td>
+        </tr>
+        <tr> 
+            <td>@date</td>
+        </tr>         
+        <tr> 
+            <td>            
+            Gentile Cliente,<br/>
+            <!--
+            cliccando su: <a href="@baseurl?aic=@aic&mailbox=@mailbox&pharmacy=@pharmacy">Leggi il Foglio Illustrativo</a> pu&ograve; visualizzare ora il foglio illustrativo aggiornato del farmaco ricevuto.<br/>
+            -->
+            cliccando su: <a href="@baseurl?code=@code">Leggi il Foglio Illustrativo</a> pu&ograve; visualizzare ora il foglio illustrativo aggiornato del farmaco ricevuto.<br/>
+
+			<!--
+            Inoltre, per avere sempre a disposizione i fogli illustrativi variati di recente, pu&ograve; cliccare: 
+            <a href="@baseurl/install.aspx?mailbox=@mailbox&pharmacy=@pharmacy">Ricerca il Foglio Illustrativo</a><br/>
+            Se utilizza IPhone<sup>&reg;</sup> o IPad<sup>&reg;</sup> Le verr&agrave; proposto di creare un collegamento che potr&agrave; salvare nei Preferiti o sul Desktop del PC.<br/>
+			-->
+            </td>
+        </tr>            
+        <tr>  
+            <td>
+            Il Servizio FarmaStampati<sup>&reg;</sup> &egrave; gratuito e rispetta la Sua privacy.
+            </td>
+        </tr>  
+    </table>    
+
+    <hr />
+    <small>FarmaStampati&reg; - <a href="mailto:info@farmastampati.it">info@farmastampati.it</a></small>
+   
+</body>
+
+</html>

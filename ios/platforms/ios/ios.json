@@ -1,0 +1,43 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"BarcodeScanner\"><param name=\"ios-package\" value=\"CDVBarcodeScanner\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "it.farmadati.cafarm"
+        },
+        "net.roughshod.plugins.barcodescanner": {
+            "PACKAGE_NAME": "it.farmadati.cafarm"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/net.roughshod.plugins.barcodescanner/www/barcodescanner.js",
+            "id": "net.roughshod.plugins.barcodescanner.BarcodeScanner",
+            "pluginId": "net.roughshod.plugins.barcodescanner",
+            "clobbers": [
+                "cordova.plugins.barcodeScanner"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-whitelist": "1.2.1",
+        "net.roughshod.plugins.barcodescanner": "3.0.0"
+    }
+}
