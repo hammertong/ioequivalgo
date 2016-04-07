@@ -736,29 +736,70 @@ function getQuery(name, params)	{
 			if (n.toLowerCase().trim() == name.toLowerCase().trim()) {										
 				return $(this).find('sql').each(
 					function() {												
-						r = { 
+						r = {
 							"sql": $(this).text().trim(), 
 							"encoding": $(this).attr('encoding')
 						}
 					}						
 				);
-			}			
+			}
 		}
 	);				
 	
 	return fillcommand(r.sql, params);
 }
-	
+
+//
+// variabile di controllo per gestire back button: 
+//  if #results -> goback()
+//  else block back button
+//
+var goback_ = false;
+
 function deviceReadyInitializer()
 {    
+	//
 	// BEGIN - OVERRIDE BACK BUTTON BEHAVIOUR
-	window.location.hash="no-back-button";
-	window.location.hash="Again-No-back-button";
-	window.onhashchange=function(){
-		window.location.hash="no-back-button";		
-		console.log('override window location ... stage:: ' + stage_);						
+	//
+	
+	if ('onhashchange' in window) {
+
+		window.location.hash = "no-back-button";
+		window.location.hash = "Again-No-back-button";
+		
+		window.onhashchange = function() 
+		{			
+			if (goback_) 
+			{
+				goback_ = false;
+				goback();
+				return;
+			}
+
+			var hash = window.location.hash;
+
+			if (hash == "#no-back-button") {
+				return;
+			}
+			else if (hash == "#results") {
+				setTimeout(function () { goback_ = true; }, 1000);
+			}
+			/*
+			else if (hash == "#search" && stage_ > 1) {
+				setTimeout(function () { goback_ = true; }, 2000);
+			}
+			*/
+
+	        window.location.hash = "no-back-button";			
+		}
 	}
+	else {
+		console.log('warning: cannot detect back/forward pressed...');		
+	}
+	
+	//
 	// END - OVERRIDE BACK BUTTON BEHAVIOUR
+	//
 		
     $('#cerca3').on("click", function() {  	
 		startBarcodeScanner();
@@ -818,7 +859,7 @@ function deviceReadyInitializer()
     if (typeof cordova == "undefined") {
         //$("#cerca3").hide();
     }
-		
+
     $("#autocomplete1").on("filterablebeforefilter", function (e, data) {
 
         var $ul = $(this),
@@ -1003,7 +1044,7 @@ function deviceReadyInitializer()
 			config.query = $(xml);				
 		},
 		error: function() {
-			alert("An error occurred while loading backend queries from XML.");
+			alert("Cannot load backend queries from XML.");
 			return;
 		}
 	});	
@@ -1116,8 +1157,7 @@ function deviceReadyInitializer()
 	//});	
 }
 
-/* function goprev() {	
-	/*
+/*  function goprev() {		
 	var i = 0;
 	for (i = sel_.length - 1; i > 0; i --) {
 		if (sel_[i] != '') {
@@ -1131,9 +1171,8 @@ function deviceReadyInitializer()
 	}
 	else {
 		goback();			
-	}	
-	
-} */
+	}		
+}*/
 
 function goback() {
 	
@@ -1144,6 +1183,7 @@ function goback() {
 	}
 
 	setTimeout (
+
 		function() {
 			
 			$("#menuforma").hide();		
@@ -1156,12 +1196,15 @@ function goback() {
 			});
 			
 			$("#cerca0").html('');	
+
 			setInputValueEmpty();
+
 			$('#autocomplete1div').show();
 			$('#autocomplete2div').show();
 			
 			$("#menucerca").slideToggle("slow", function() {});				
 		},
+
 		200);
 }
 
@@ -1271,9 +1314,10 @@ function cercaTabellaOrdinataDosaggi(query, value)
 					o_id_par != data[i].id_par) 		// new record condition
 				{	
 					count ++;
-					
+
 					var forma = normalizzaForma(data[i].forma);
 					var ups = parseInt(data[i].ups);	
+					
 					add_ups = true;					
 					
 					table [count] = [
@@ -1292,8 +1336,8 @@ function cercaTabellaOrdinataDosaggi(query, value)
 					{						
 						table [count][4] += parseInt(data[i].ups);						
 					}
-					else {
-						
+					else 
+					{						
 						add_ups = false;
 						
 						var dose  = getDose(data[i]);						
@@ -1443,6 +1487,7 @@ var AIC_MODE = 2;
 function setPage (stage, keep) {
 	
 	stage_ = stage;
+	skipchange_ = true;
 	
 	sel_[stage] = keep;	
 	
@@ -1523,17 +1568,17 @@ function setPage (stage, keep) {
 			
 			//show html choice 
 			html += '<tr><td align="left">';
-			html += '<a href="javascript: setPage(' + (stage + 1) + ', \'' + sel + '\')" ';						
-			html += 'class="ui-corner-all ui-shadow ui-overlay-shadow ui-btn" ';			
+			html += '<a href="javascript: setPage(' + (stage + 1) + ', \'' + sel + '\')" ';
+			html += 'class="ui-corner-all ui-shadow ui-overlay-shadow ui-btn" ';
 			html += 'style="background: #11389D; color: white; font-weight: bolder; border-radius: 16px !important;">'; 
 			html += '<span class="ui-btn-inner" style="vertical-align: middle;">';
 			html += '<span class="ui-btn-text" style="font-size: 14px;">' + splitString (sel) + '</span>';
 			html += '</span>';
-			html += '</a>';										
+			html += '</a>';
 			html += '</td></tr>';
 
 			selections [selections_ptr ++] = sel;
-						
+
 		}
 		
 		// va avanti fino a quando c'e' la possibilita' di scelta
@@ -1552,14 +1597,14 @@ function setPage (stage, keep) {
 	}
 	head += '</span><br/>';
 	
-	switch(stage) {		
-		case 1:					
-			head +='selezionare la tipologia';									
+	switch(stage) {
+		case 1:	
+			head += 'selezionare la tipologia';									
 			break;
-		case 2:			
+		case 2:	
 			head += 'selezionare il dosaggio';						
 			break;
-		case 3:			
+		case 3:	
 			head += 'selezionare unit&agrave; posologiche';						
 			break;
 		

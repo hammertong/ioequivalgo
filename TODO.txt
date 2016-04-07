@@ -1,11 +1,19 @@
+URGENTI
+-------
 
-- verifica compresse rilascio modificato
++ back button
+  @ gestito al momento solo sulla pagina di risultati
 
 + selezione per posologia non lavora corretamente in alcuni casi controllare 
   @ IMPOSTATO FILTRO IN populateresults()
   
-- dosaggi complessi 1mg + 2mg + AMINOVEN ...
+? dosaggi complessi 1mg + 2mg + AMINOVEN ...
   @ rimossa la ricerca dosaggio/posol per farmaci che non hanno equivalenti
  
+MIGLIORIE
+---------
+
 - hide/show ritardato dopo creazione html
-  
+
+- ritorno indietro delle pagine (con swipe ?)
+
