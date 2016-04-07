@@ -28,6 +28,9 @@ then
   
   cp -f tmp.js android/www/js/index.js
   cp -f tmp.js ios/www/js/index.js
+
+  cp -f webapp/js/config-prod.js android/www/js/config.js
+  cp -f webapp/js/config-prod.js ios/www/js/config.js
   
   rm -f tmp.js
 
@@ -40,9 +43,10 @@ then
   
   curl -T webapp/js/data.js ftp://www.farmastampati.mobi/www/preview/www/js/data.js --user Administrator:Phitofarma21\!
   curl -T webapp/query.xml ftp://www.farmastampati.mobi/www/preview/www/query.xml --user Administrator:Phitofarma21\!
+  curl -T webapp/js/config-prod.js ftp://www.farmastampati.mobi/www/preview/www/js/config.js --user Administrator:Phitofarma21\!
   curl -T tmp.js ftp://www.farmastampati.mobi/www/preview/www/js/index.js --user Administrator:Phitofarma21\!
-  curl -T webapp/index.html ftp://www.farmastampati.mobi/www/preview/www/index.html --user Administrator:Phitofarma21\!
-  
+  curl -T webapp/index.html ftp://www.farmastampati.mobi/www/preview/www/index.html --user Administrator:Phitofarma21\!  
+
   rm -f tmp.js
 
 elif [ "$1" == "test" ] 
@@ -54,6 +58,7 @@ then
   
   curl -T webapp/js/data.js ftp://www.farmastampati.mobi/www/preview/www2/js/data.js --user Administrator:Phitofarma21\!
   curl -T webapp/query.xml ftp://www.farmastampati.mobi/www/preview/www2/query.xml --user Administrator:Phitofarma21\!
+  curl -T webapp/js/config-prod.js ftp://www.farmastampati.mobi/www/preview/www2/js/config.js --user Administrator:Phitofarma21\!
   curl -T tmp.js ftp://www.farmastampati.mobi/www/preview/www2/js/index.js --user Administrator:Phitofarma21\!
   curl -T webapp/index.html ftp://www.farmastampati.mobi/www/preview/www2/index.html --user Administrator:Phitofarma21\!
   
@@ -68,6 +73,7 @@ then
   
   curl -T webapp/js/data.js ftp://www.farmastampati.mobi/www/preview/www3/js/data.js --user Administrator:Phitofarma21\!
   curl -T webapp/query.xml ftp://www.farmastampati.mobi/www/preview/www3/query.xml --user Administrator:Phitofarma21\!
+  curl -T webapp/js/config-prod.js ftp://www.farmastampati.mobi/www/preview/www3/js/config.js --user Administrator:Phitofarma21\!  
   curl -T tmp.js ftp://www.farmastampati.mobi/www/preview/www3/js/index.js --user Administrator:Phitofarma21\!
   curl -T webapp/index.html ftp://www.farmastampati.mobi/www/preview/www3/index.html --user Administrator:Phitofarma21\!
   
@@ -81,6 +87,7 @@ then
   
   curl -T webapp/js/data.js ftp://www.farmastampati.mobi/www/preview/www3/js/data.js --user Administrator:Phitofarma21\!
   curl -T webapp/query.xml ftp://www.farmastampati.mobi/www/preview/www3/query.xml --user Administrator:Phitofarma21\!
+  curl -T webapp/js/config-prod.js ftp://www.farmastampati.mobi/www3/preview/www3/js/config.js --user Administrator:Phitofarma21\!  
   curl -T webapp/js/index.js ftp://www.farmastampati.mobi/www/preview/www3/js/index.js --user Administrator:Phitofarma21\!
   curl -T webapp/index.html ftp://www.farmastampati.mobi/www/preview/www3/index.html --user Administrator:Phitofarma21\!
   

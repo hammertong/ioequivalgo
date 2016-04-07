@@ -1,5 +1,4 @@
-/* 
- *
+/*****************************************************************************************************
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -37,22 +36,15 @@
  * gitrepo @ https://github.com/wildabeast/BarcodeScanner.git 
  * gitrepo @ phonegap plugin add https://github.com/RoughshodNetworks/phonegap-plugin-barcodescanner.git
  *
- */
- 
-var ENDPOINT_PROD = 'http://www.farmastampati.mobi/FarmastampatiMobi';
-var ENDPOINT_TEST = 'http://127.0.0.1:60510';
+ ******************************************************************************************************/ 
+var QUERY_URL 						= ENDPOINT + '/query';
 
-//var ENDPOINT = ((typeof cordova == "undefined") ? ENDPOINT_TEST : ENDPOINT_PROD);
-//var ENDPOINT = ENDPOINT_TEST;
-var ENDPOINT = ENDPOINT_PROD;
-var QUERY_URL = ENDPOINT + '/query';
+var MAX_AUTOCOMPLETE_RESULTS_LIST 	= 1000;
+var MAX_RESULTS_SIZE 				= 1000;
+var BTN_MAX_LINE_LENGTH 			= 30; 						// truncate buttons larger than this number of characters 
 
-var MAX_AUTOCOMPLETE_RESULTS_LIST = 1000;
-var MAX_RESULTS_SIZE = 1000;
-var BTN_MAX_LINE_LENGTH = 30;
-
-var ND = 'prezzo discrezionale';
-
+var QUERY_XML 						= "query.xml"; 				// may be http://... 
+var ND 								= 'prezzo discrezionale';
 
 var config = {
     "dati": null,					//
@@ -474,10 +466,10 @@ function OnClickAutocomplete(code, type, target)
 	switch (type) {
 		case 'C':
 			cercaTabellaOrdinataDosaggi('tabellaOrdinataDosaggiPerPA', v);
-			break;			
-		case 'D':	
+			break;
+		case 'D':
 			cercaTabellaOrdinataDosaggi('tabellaOrdinataDosaggiPerNF', v);
-			break				
+			break;
 		default:
 			console.log('ERROR: OnClickAutocomplete invoked with invalid type: ' + type);
 			break;		
@@ -757,7 +749,7 @@ function getQuery(name, params)	{
 var goback_ = false;
 
 function deviceReadyInitializer()
-{    
+{ 
 	//
 	// BEGIN - OVERRIDE BACK BUTTON BEHAVIOUR
 	//
@@ -783,12 +775,10 @@ function deviceReadyInitializer()
 			}
 			else if (hash == "#results") {
 				setTimeout(function () { goback_ = true; }, 1000);
-			}
-			/*
-			else if (hash == "#search" && stage_ > 1) {
-				setTimeout(function () { goback_ = true; }, 2000);
-			}
-			*/
+			}			
+			else if (hash == "#search") {
+				//TODO :: ?
+			}			
 
 	        window.location.hash = "no-back-button";			
 		}
@@ -1038,7 +1028,7 @@ function deviceReadyInitializer()
 	
 	$.ajax({
 		type: "GET", 
-		url: "query.xml",
+		url: QUERY_XML,
 		dataType: "xml", 
 		success: function(xml){
 			config.query = $(xml);				
@@ -1055,6 +1045,10 @@ function deviceReadyInitializer()
 	
 	$("#search").on( "pageshow", function( event ) { 
     
+    	if (!$('#displaysearch').is(':visible')) {
+			$('#displaysearch').slideToggle("slow", function() {});    		
+    	}
+
 		$('#search div .ui-input-search')            
 			.each(function(ev) {             
 				$(this).css('font-size', '16px');
@@ -1112,7 +1106,7 @@ function deviceReadyInitializer()
 	//
 	// gestione pressione tasti speciali
 	//
-    $(document).keydown(function (event) {        
+    $(document).keydown(function (event) {
         
 		var doPrevent = false;
 		var keycode = (event.keyCode ? event.keyCode : event.which);
@@ -1149,30 +1143,44 @@ function deviceReadyInitializer()
     });	
 	
 	$('#search').on("swiperight", function () {                      						
-		goback();
+		goprev();
 	});
 	
-	//$('#results').on("swiperight", function () {				
+	//$('#results').on("swiperight", function () {
 	//	goprev();
 	//});	
 }
 
-/*  function goprev() {		
+function goprev() {
+
 	var i = 0;
 	for (i = sel_.length - 1; i > 0; i --) {
 		if (sel_[i] != '') {
-			sel_[i] = '';
-			i --;
 			break;
 		}
 	}
-	if (i > 0) {
-		setPage(i, null);					
+	
+	var sel_prev = sel_[i];
+	sel_[i] = '';
+
+	/*
+	console.log(' ##################### > ' + i);
+	var t = '';
+	for (var j = 0; j < sel_.length; j ++) {
+		 t += "/" + sel_[j];
+	}
+	console.log(' --------------------- > ' + t);
+	*/
+
+	if (i > 1) {
+		goback();
+		//setPage(i, sel_[i - 1]);
 	}
 	else {
-		goback();			
-	}		
-}*/
+		goback();
+	}
+
+}
 
 function goback() {
 	
@@ -1473,8 +1481,6 @@ var sel_ = [ '', '', '', '', '', '', '' ];
 
 var ups_ = null;
 
-var stage_ = 0;
-
 //
 //  AIC_MODE - admitted values:
 //
@@ -1485,8 +1491,7 @@ var stage_ = 0;
 var AIC_MODE = 2; 
 
 function setPage (stage, keep) {
-	
-	stage_ = stage;
+		
 	skipchange_ = true;
 	
 	sel_[stage] = keep;	
@@ -1656,7 +1661,7 @@ function setPage (stage, keep) {
 					return (t0.length < t1.length ? 1 : -1);
 				}
 			}
-			catch (ex) {				
+			catch (ex) {
 				console.log('sort error => ' + ex);
 			}
 			return 0;
