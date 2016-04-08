@@ -3,3 +3,7 @@
 /backend/vs/FarmastampatiMobi/FarmastampatiMobi.suo
 /backend/vs/FarmastampatiMobi/bin
 /backend/vs/FarmastampatiMobi/obj
+/ios/platforms/ios/www/js/config.js
+/ios/platforms/ios/www/js/config-test.js
+/ios/platforms/ios/www/js/config-prod.js
+
