@@ -1,1 +1,2 @@
-var ENDPOINT 						= 'http://www.farmastampati.mobi/FarmastampatiMobi';
+var ENDPOINT 	= 'http://www.farmastampati.mobi/FarmastampatiMobi';
+var DEBUG		= false;

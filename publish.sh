@@ -40,6 +40,10 @@ then
   xmllint --xpath "/*[local-name()='widget']/@version" ios/config.xml | sed -e "s/-/_/g;s/^/var /g;s/$/\;/g;s/version/app_version/g" >> ios/www/js/config.js
   xmllint --xpath "/*[local-name()='widget']/@ios-CFBundleVersion" ios/config.xml | sed -e "s/-/_/g;s/^/var /g;s/$/\;/g" >> ios/www/js/config.js
 
+  echo unpacking ios icons and splash screens ...
+  unzip -oq graphics/ios_icons.zip -d "ios/platforms/ios/Io Equivalgo/Resources/"
+  unzip -oq graphics/ios_splash.zip -d "ios/platforms/ios/Io Equivalgo/Resources/"
+
   rm -f tmp.js
 
 elif [ "$1" == "prod" ] 
@@ -81,7 +85,7 @@ then
   
   curl -T webapp/js/data.js ftp://www.farmastampati.mobi/www/preview/www3/js/data.js --user Administrator:Phitofarma21\!
   curl -T webapp/query.xml ftp://www.farmastampati.mobi/www/preview/www3/query.xml --user Administrator:Phitofarma21\!
-  curl -T webapp/js/config-prod.js ftp://www.farmastampati.mobi/www/preview/www3/js/config.js --user Administrator:Phitofarma21\!  
+  curl -T webapp/js/config-dev.js ftp://www.farmastampati.mobi/www/preview/www3/js/config.js --user Administrator:Phitofarma21\!  
   curl -T tmp.js ftp://www.farmastampati.mobi/www/preview/www3/js/index.js --user Administrator:Phitofarma21\!
   curl -T webapp/index.html ftp://www.farmastampati.mobi/www/preview/www3/index.html --user Administrator:Phitofarma21\!
   
@@ -95,7 +99,7 @@ then
   
   curl -T webapp/js/data.js ftp://www.farmastampati.mobi/www/preview/www3/js/data.js --user Administrator:Phitofarma21\!
   curl -T webapp/query.xml ftp://www.farmastampati.mobi/www/preview/www3/query.xml --user Administrator:Phitofarma21\!
-  curl -T webapp/js/config-prod.js ftp://www.farmastampati.mobi/www3/preview/www3/js/config.js --user Administrator:Phitofarma21\!  
+  curl -T webapp/js/config-dev.js ftp://www.farmastampati.mobi/www/preview/www3/js/config.js --user Administrator:Phitofarma21\!  
   curl -T webapp/js/index.js ftp://www.farmastampati.mobi/www/preview/www3/js/index.js --user Administrator:Phitofarma21\!
   curl -T webapp/index.html ftp://www.farmastampati.mobi/www/preview/www3/index.html --user Administrator:Phitofarma21\!
   

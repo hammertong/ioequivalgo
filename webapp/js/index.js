@@ -183,7 +183,7 @@ function fillcommand(command, params)
 		}
 	);	
 	
-	console.log("SQL > " + data);	
+	if (DEBUG) console.log("SQL > " + data);	
 	
 	switch (config.encoding) {
 		case 'base64':
@@ -210,21 +210,19 @@ function populateResults()
     $("#resultsList").empty();
 	
 	html += '<ul data-role="listview" data-autodividers="false" data-inset="true">';			
-	html += '<li data-role="list-divider" style="color: #808080; height: 50px;">';
-	html += '<span class="x-scrolling">';
-	html += 'ELENCO DEI FARMACI EQUIVALENTI<br/>';
+	html += '<li data-role="list-divider" style="color: #808080; min-height: 50px;">';
+	html += '<span style="white-space:normal;">';
+	html += 'FARMACI EQUIVALENTI<br/>';	
 	html += config.ricercaIniziale + '<br>';
 		
-	var heax = ''
-	for (var i = 0; i < sel_.length; i ++) {
+	var heax = sel_[4];
+	heax += ' ';
+	for (var i = 0; i < 4; i ++) {
 		if (!sel_ || !sel_[i] || sel_[i].length == 0) continue;
-		if (heax.length > 0) heax += ' &gt; ';
+		if (heax.length > 0) heax += ' ';
 		heax += sel_[i];		
 	}		
 	html += heax;
-	
-	//formaSelezionata + ' ' + 
-	//config.dosaggioSelezionato;
 	
 	html += '</span>';
 	html += '</li>';
@@ -251,8 +249,11 @@ function populateResults()
 		lst += id;
 		
 		// ignora posologie non selezionate
-		if (rec.descrizione.indexOf(sel_[STAGE_LAST]) < 0) {
-			console.log('ignora posologia non selezionata (' + sel_[STAGE_LAST - 2] + '): ' + rec.descrizione);
+		if (sel_[STAGE_LAST] != null 
+				&& sel_[STAGE_LAST] != '1' 
+				&& sel_[STAGE_LAST] != '' 
+				&& rec.descrizione.indexOf(sel_[STAGE_LAST]) < 0) {
+			if (DEBUG) console.log('ignora posologia non selezionata (' + sel_[STAGE_LAST] + '): ' + rec.descrizione);
 			continue;
 		}
 		
@@ -286,7 +287,7 @@ function populateResults()
 			html += '<br/><b>Con obbligo di ricetta</b>';
 		}
 
-        if (rimborso != ND) {						
+        if (rimborso != ND) {
 			var diff = parseFloat(rec.prezzoAlPubblico);
 			diff -= parseFloat(rec.prezzoRimborsoNazionale);
 			diff *= 100;
@@ -308,7 +309,6 @@ function populateResults()
 			html += '&nbsp;<img src="images/inlista.png" style="border: 0px; width: 16px;" ';
 			html += 'alt="in lista di trasparenza"/>&nbsp;in lista di trasparenza';
 		}
-				
 		
 		html += '<br/><span>Classe ' + rec.classe + '</span>';	
 		
@@ -324,7 +324,7 @@ function populateResults()
 
     return count ;
 }
-	
+
 function getItemsByCustomFilter (productsFilter) {
 	
     $.ajax ({
@@ -357,9 +357,9 @@ function getItemsByCustomFilter (productsFilter) {
 		            
 			config.dati = data;
 			
-			if (populateResults() <= 0) {
-				$("#resultsHeader").html($("#resultsHeader").html() 
-						+ '<br><br><b style="color: red; font-weight: bolder;">IL FARMACO NON HA EQUIVALENTI</b>');
+			if (populateResults() <= 0) {				
+				msgbox ('Nessun farmaco equivalente autorizzato in<br/>classe A o C', 'Avviso', 200);
+				return;
 			}                        
             
 			$.mobile.changePage('#results', { 
@@ -471,7 +471,7 @@ function OnClickAutocomplete(code, type, target)
 			cercaTabellaOrdinataDosaggi('tabellaOrdinataDosaggiPerNF', v);
 			break;
 		default:
-			console.log('ERROR: OnClickAutocomplete invoked with invalid type: ' + type);
+			if (DEBUG) console.log('ERROR: OnClickAutocomplete invoked with invalid type: ' + type);
 			break;		
 	}
 }
@@ -486,7 +486,7 @@ function getInputValue() {
 			.each(function(ev) { 
 				v = $(this).val(); 
 				//count ++;	
-				//console.log('------------> ' + v + ' (' + count + ')'); 				
+				//if (DEBUG) console.log('------------> ' + v + ' (' + count + ')'); 				
 			});
 	return v;
 }
@@ -572,13 +572,75 @@ function descriviDosaggio(s)
 			.replace(/ con/i, '');;
     
 }
+
+function getItemsByAIC (_aic) {
+
+	var _sql = null;
+	if (DEBUG) console.log('recupero dettagli di farmaci senza equiv.: ' + _aic);
+
+	if (_aic.indexOf(',') > 0) {
+		var aic = _aic.split(',');
+		var _s = '';
+		for (var i = 0; i < aic.length; i ++) {
+			if (!aic[i]) continue;
+			if (aic[i].length == 0) continue;
+			if (_s.length > 0) _s += ', ';
+			_s += "'" + aic[i] + "'";
+		}		
+		_sql = getQuery ('recuperaDettaglioAIC', 
+				[
+					MAX_RESULTS_SIZE,
+					_s
+				]);
+	}
+	else {
+		_sql = getQuery ('recuperaDettaglioAIC', 
+				[
+					MAX_RESULTS_SIZE,
+					'text:' + _aic
+				]);					
+	}	
+	
+    $.ajax ({
+
+        url: QUERY_URL,        
+		dataType: 'json',        
+		crossDomain: true,
+		
+        data: {
+			sql: _sql,
+			encoding: config.encoding
+		}, 
+		
+		method: 'POST',
+	
+        success: function (data) {
+		            
+			config.dati = data;
+			
+			if (populateResults() <= 0) {				
+				msgbox ('Nessun farmaco equivalente autorizzato in<br/>classe A o C', 'Avviso', 200);
+				return;
+			}                        
+            
+			$.mobile.changePage('#results', { 
+					allowSamePageTransition: true, 
+					transition: 'slide'
+			});
+			
+        },
+
+        error: function (data) {                           
+            msgbox ("La ricerca della lista dei farmaci ha causato un errore", "Avviso", 200);
+        }
+
+    });
+
+}
 		
 function cercaPerAIC (_aic)
-{
-	//config.formaSelezionata = forma;
-	//config.dosaggioSelezionato = descriviDosaggio(dosaggio);
-
-	var _sql = '';	
+{	
+	var _sql = '';		
 	
 	if (_aic.indexOf(',') > 0) {
 		var aic = _aic.split(',');
@@ -589,10 +651,10 @@ function cercaPerAIC (_aic)
 			if (_s.length > 0) _s += ', ';
 			_s += "'" + aic[i] + "'";
 		}		
-		_sql = getQuery ('cercaGruppoPerAIC_in', [ _s ]);		
+		_sql = getQuery ('cercaGruppoPerAIC_in', [ _s ]);						
 	}
 	else {
-		_sql = getQuery ('cercaGruppoPerAIC', [ 'text:' + _aic ]);		
+		_sql = getQuery ('cercaGruppoPerAIC', [ 'text:' + _aic ]);						
 	}	
 
 	$.ajax ({
@@ -610,11 +672,15 @@ function cercaPerAIC (_aic)
 			method: 'POST',
 			
 			success: function (data) {
-			
-				if (!data || data.length <= 0) {					
-					msgbox ('Codice farmaco non trovato', 'Avviso', 200);
+
+				if (!data || data.length <= 0) {
+					getItemsByAIC (_aic);
+					//il farmaco non ha equivalenti, nella lista viene comunque riportato								
+					//msgbox ('Nessun farmaco equivalente autorizzato in<br/>classe A o C ...', 'Avviso', 200);
 					return;
 				}
+
+				//console.log(' passed ---> ' + _aic);
 				
 				var productsFilter = '';				
 				
@@ -624,10 +690,13 @@ function cercaPerAIC (_aic)
 					config.formaSelezionata = data[i].dosaggio;
 					dosaggioSelezionato = '';
 					
+					if ((!data[i].codeA || data[i].codeA.length == 0) &&
+						(!data[i].codeC || data[i].codeC.length == 0)) continue;
+
 					switch(data[i].classe) {
 					
 					case 'A':
-					case 'H':						
+					case 'H':											
 						if (productsFilter.length > 0) productsFilter += " OR ";
 						productsFilter += "APP_CA.FDI_1010 = '" + data[i].codeA + "'";
 						break;
@@ -639,7 +708,7 @@ function cercaPerAIC (_aic)
 						break;
 					
 					default:
-						console.log('warning: trovata classe non valida: ' + data[i].classe);
+						if (DEBUG) console.log('warning: trovata classe non valida: ' + data[i].classe);
 					
 					}	
 					
@@ -647,11 +716,12 @@ function cercaPerAIC (_aic)
 				}					
 				
 				if (productsFilter.length == 0) {
-					msgbox('Il prodotto non ha farmaci equivalenti', 'Avviso', 200);
-					console.log('la ricerca non ha prodotto gruppi di equivalenza validi');
+					getItemsByAIC (_aic);
+					//msgbox('Il prodotto non ha farmaci equivalenti', 'Avviso', 200);
+					//console.log('la ricerca non ha prodotto gruppi di equivalenza validi');
 					return;
 				}
-				
+
 				getItemsByCustomFilter(productsFilter);
 				
 			},
@@ -722,6 +792,7 @@ function normalizzaForma(c) {
 
 function getQuery(name, params)	{		
 	var r = null;	
+	if (DEBUG) console.log('searching named query: ' + name + ' ...');
 	config.query.find('query').each(
 		function() {			
 			var n = $(this).attr('name');
@@ -736,8 +807,7 @@ function getQuery(name, params)	{
 				);
 			}
 		}
-	);				
-	
+	);					
 	return fillcommand(r.sql, params);
 }
 
@@ -908,14 +978,14 @@ function deviceReadyInitializer()
 						v = f[1]; //.replace(/\//gi, ' + ');
 						if (lst.indexOf("|" + v + "|") >= 0) return;
 						lst += v + '|';						
-						v = '<span style="color: #007700;">' + v + '</span>';
+						v = '<span style="color: #007700; white-space:normal;">' + v + '</span>';
 					}
 					else if (f[0] == 'B' || f[0] == 'D') {
 						v = f[1].replace(/\(/gi, '<i style="font-size: smaller;">')
 								.replace(/\)/gi, '</i>');
 						if (lst.indexOf("|" + v + "|") >= 0) return;
 						lst += v + '|';						
-						v = '<span style="color: #000077;">' + v + '</span>';
+						v = '<span style="color: #000077; white-space:normal;">' + v + '</span>';
 					}
 					
 					html += "<li><a href=\"javascript:OnClickAutocomplete('" + 
@@ -983,21 +1053,21 @@ function deviceReadyInitializer()
 				$.each(response, function (i, val) {
 					
 					var v = null;
-					
+					 
 					var f = val.split('|');
 					
 					if (f[0] == 'A' || f[0] == 'C') {
 						v = f[1]; //.replace(/\//gi, ' + ');
 						if (lst.indexOf("|" + v + "|") >= 0) return;
 						lst += v + '|';						
-						v = '<span style="color: #007700;">' + v + '</span>';
+						v = '<span style="color: #007700; white-space:normal;">' + v + '</span>';
 					}
 					else if (f[0] == 'B' || f[0] == 'D') {
 						v = f[1].replace(/\(/gi, '<i style="font-size: smaller;">')
 								.replace(/\)/gi, '</i>');
 						if (lst.indexOf("|" + v + "|") >= 0) return;
 						lst += v + '|';						
-						v = '<span style="color: #000077;">' + v + '</span>';
+						v = '<span style="color: #000077; white-space:normal;">' + v + '</span>';
 					}
 					
 					html += "<li><a href=\"javascript:OnClickAutocomplete('" + 
@@ -1068,7 +1138,7 @@ function deviceReadyInitializer()
 				
 		$('#search .ui-input-clear')
 				.on("click", function(ev) {             
-					console.log('clear invoked...');
+					//if (DEBUG) console.log('clear invoked...');
 					for (var i = 0; i < sel_.length; i++) {
 						sel_[i] = '';
 					}
@@ -1111,7 +1181,7 @@ function deviceReadyInitializer()
 		var keycode = (event.keyCode ? event.keyCode : event.which);
 		
         if (keycode == '8') { 			// BACKSPACE
-			console.log(' **** backspace pressed');
+			//if (DEBUG) console.log(' **** backspace pressed');
 			var d = event.srcElement || event.target;
 			if ((d.tagName.toUpperCase() === 'INPUT' && (
 					d.type.toUpperCase() === 'TEXT' ||
@@ -1129,10 +1199,10 @@ function deviceReadyInitializer()
 			}
         }        
 		else if (keycode == '9') { 		// HORIZONTAL TAB
-			console.log(' **** tab pressed');
+			//if (DEBUG) console.log(' **** tab pressed');
         }        
 		else if (keycode == '13') { 	// CR
-			console.log(' **** carriage return pressed');
+			//if (DEBUG) console.log(' **** carriage return pressed');
         }        
 		
 		if (doPrevent) {
@@ -1144,13 +1214,19 @@ function deviceReadyInitializer()
 	$('#search').on("swiperight", function () {                      						
 		//
 		// TODO ancora non funziona bene:
-		//		si sminchia la ricerca ritornando in forward
+		//		1) si sminchia la ricerca ritornando in forward
 		//
 		//goprev();
 	});
 	
 	$('#results').on("swiperight", function () {
-		goback();
+		//
+		// TODO ancora non funziona bene:
+		//		1) se c'e' us salto diretto senza passaggi 
+		//			intermedi non rileva correttamente il goprev
+		//		2) interferisce negativamente con lo zoom
+		//
+		//goback();
 	});	
 }
 
@@ -1213,7 +1289,7 @@ function goback() {
 			$('#autocomplete2div').show();
 			
 			$("#menucerca").slideToggle("slow", function() {});				
-						
+
 		},
 
 		200);
@@ -1258,7 +1334,7 @@ var app = {
     
     receivedEvent: function(id) {
         if (console) { 
-            console.log('Received Event: ' + id); 
+            if (DEBUG) console.log('Received Event: ' + id); 
         }
     }
 
@@ -1273,12 +1349,12 @@ var app = {
 function cercaTabellaOrdinataDosaggi(query, value)
 {
 	if (!query || query.length == 0) {
-		console.log ('ERRORE: query non specificata in cercaTabellaOrdinataDosaggi()');
+		if (DEBUG) console.log ('ERRORE: query non specificata in cercaTabellaOrdinataDosaggi()');
 		return;	
 	}
 	
 	if (!value || value.length == 0) {
-		console.log ('ERRORE: chiave di ricerca non specificata in cercaTabellaOrdinataDosaggi()');
+		if (DEBUG) console.log ('ERRORE: chiave di ricerca non specificata in cercaTabellaOrdinataDosaggi()');
 		return;	
 	}
 	
@@ -1370,14 +1446,12 @@ function cercaTabellaOrdinataDosaggi(query, value)
 								
 			}
 			
-			//console.log ('----------------:: RESULTS ::-------------\n' + JSON.stringify(table));
-			
 			stage = 1;
 			setPage (1, null);		
 			
 		},
 		error: function (data) {     
-			console.log("remote error: " + JSON.stringify(data));		
+			if (DEBUG) console.log("remote error: " + JSON.stringify(data));		
 			msgbox ('Impossibile collegarsi al backend', 'Avviso', 500);
 		}
 		
@@ -1464,7 +1538,7 @@ function getDose(rec)
 	}
 	catch (err) 
 	{
-		console.log("error: " + err + " - getDose() -> from " + JSON.stringify(rec));
+		if (DEBUG) console.log("error: " + err + " - getDose() -> from " + JSON.stringify(rec));
 	}
 
 	if (dose.charAt(dose.length - 1) == ',') dose = dose.substr(0, dose.length - 1);
@@ -1505,7 +1579,7 @@ function setPage (stage, keep, reverse) {
 		for (var i = 1; i < table.length; i ++)
 		{	
 			//hide non selected in previous stage
-			//console.log ('comparing keep: ' + keep + ' with ' + table[i][stage]);			
+			//if (DEBUG) console.log ('comparing keep: ' + keep + ' with ' + table[i][stage]);			
 			if (keep && stage > 1 && keep != table[i][stage])
 			{
 				table[i][1] ++;	
@@ -1553,10 +1627,10 @@ function setPage (stage, keep, reverse) {
 
 		for (var i = 1; i < table.length; i ++)
 		{			
-			//console.log(' ********* ' + JSON.stringify(table[i]));
+			//if (DEBUG) console.log(' ********* ' + JSON.stringify(table[i]));
 			
 			//hide non selected in previous stage
-			//console.log ('comparing keep: ' + keep + ' with ' + table[i][stage]);			
+			//if (DEBUG) console.log ('comparing keep: ' + keep + ' with ' + table[i][stage]);			
 			if (keep && stage > 1 && keep != table[i][stage])
 			{
 				table[i][1] ++;	
@@ -1589,7 +1663,7 @@ function setPage (stage, keep, reverse) {
 		
 		// va avanti fino a quando c'e' la possibilita' di scelta
 		if (selections_ptr < 2) {
-			//console.log('entering automatic selection ...');
+			//if (DEBUG) console.log('entering automatic selection ...');
 			setPage (stage + 1, selections[0]);
 			return;
 		}
@@ -1663,7 +1737,7 @@ function setPage (stage, keep, reverse) {
 				}
 			}
 			catch (ex) {
-				console.log('sort error => ' + ex);
+				if (DEBUG) console.log('sort error => ' + ex);
 			}
 			return 0;
 		}
@@ -1675,7 +1749,7 @@ function setPage (stage, keep, reverse) {
 		{		
 			var row = $(this);
 			if (row.text() != trow[k]) return;
-			//console.log('shifting @top ...' + row.text());
+			//if (DEBUG) console.log('shifting @top ...' + row.text());
 			row.insertBefore (row.parent().find('tr:first-child'));			
 		});
 	}

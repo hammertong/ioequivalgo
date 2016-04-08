@@ -48,7 +48,7 @@
 			if (version_id.length == 0) {
 				version_id += 'Anteprima APP<br/>' + 
 					'<a style="font-size: 12px; text-decoration: none;" href="http://www.farmadati.it">' +
-					'Visita il sito di Farmadati Italia &copy;</a>';
+					'Farmadati Italia &copy;</a>';
 			}
 
 			msgbox (version_id, '#IoEquivalgo', 200);
@@ -114,7 +114,7 @@
 		h1.results {
 			font-size: 14px;
 			color: #808080;
-			border-bottom: 1px solid #808080;			
+			/*border-bottom: 1px solid #808080;*/
 			text-align: left; 
 			/*margin-left: 20px;*/
 		}
@@ -419,9 +419,9 @@
 
     </div>    
 	    
-    <div data-role="main" class="ui-content">  
+    <div data-role="main" class="ui-content" style="margin-top: -20px; margin-left:-10px; margin-right:-10px;">  
 	  <h1 class="results" id="resultsHeader"></h1>	  
-	  <div id="resultsList" style="padding: 4px"></div>
+	  <div id="resultsList" style="padding: 0px"></div>
 	  <!--
       <ul id="resultsList" data-role="listview" data-autodividers="false" data-inset="true">                
       </ul>
