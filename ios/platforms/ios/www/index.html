@@ -21,10 +21,38 @@
 
         <script type="text/javascript">
 
-        function body_onload()
+        function _body_onload()
         {
            // insert here any html test at startup ...
         }
+
+        function _show_version()
+		{
+			var version_id = '';
+
+			if (typeof app_version != 'undefined') {
+				version_id += 'Version ';
+				version_id += app_version;				
+				version_id += ' ';
+			}
+			
+			if (typeof ios_CFBundleVersion != 'undefined') {
+				version_id += 'iOS BUILD ';
+				version_id += ios_CFBundleVersion;
+			}
+			else if (typeof android_versionCode != 'undefined') {
+				version_id += 'Android BUILD ';
+				version_id += android_versionCode;
+			}
+			
+			if (version_id.length == 0) {
+				version_id += 'Anteprima APP<br/>' + 
+					'<a style="font-size: 12px; text-decoration: none;" href="http://www.farmadati.it">' +
+					'Visita il sito di Farmadati Italia &copy;</a>';
+			}
+
+			msgbox (version_id, '#IoEquivalgo', 200);
+		}
 
         </script>
 				
@@ -95,7 +123,7 @@
 
     </head>
 
-<body style="margin-top: 20px;" onload="body_onload()">
+<body style="margin-top: 20px;" onload="_body_onload()">
 
 <center>
 
@@ -157,7 +185,7 @@
      
 		<img alt="logo" src="images/ioequivalgo.png" style="width: 100%; padding-top: 20px; padding-bottom: 40px;"/>
 			
-		<div>
+		<div id="displaysearch" style="display: none;">
 		
 			<div id="autocomplete1div">		
 				<ul id="autocomplete1" 
@@ -219,7 +247,7 @@
 			<br/>
 			<span id="cerca0"></span>						
 
-			<table id="menucerca">								
+			<table id="menucerca" style="margin-top: -22px;">								
 				<tr>		
 					<td>
 						<a id="cerca3" class="ui-corner-all ui-shadow ui-overlay-shadow ui-btn superrounded"> 
@@ -237,11 +265,13 @@
 		</div>
 	  
 		<!-- powered by -->    
-		<div data-role="footer" style="border: 0px; background: white; position: relative; bottom: 0px; width: 100%; padding-top: 40px;"> 	
-			<span style="font-size: 10px;">powered by</span><br/>
-			<img src="images/farmadati.png" alt="powered by farmadati" style="opacity: 0.8; width: 48px"></img><br/>
+		<div data-role="footer" style="border: 0px; background: white; position: relative; bottom: 0px; width: 100%; padding-top: 10px;"> 	
+			<a href="javascript: _show_version()" style="font-weight: lighter; font-size: 10px;">
+				<span style="font-size: 10px;">powered by</span><br/>
+				<img src="images/farmadati.png" alt="powered by farmadati" style="opacity: 0.8; width: 56px"></img><br/>
+				http://www.farmadati.it
+			</a>
 		</div>
-		<a href="#" style="font-style: normal; font-size: 10px;">http://www.farmadati.it</a>
 	
 	</div>
   
@@ -390,14 +420,12 @@
     </div>    
 	    
     <div data-role="main" class="ui-content">  
-	  <h1 class="results" id="resultsHeader"></h1>
-	  
+	  <h1 class="results" id="resultsHeader"></h1>	  
 	  <div id="resultsList" style="padding: 4px"></div>
 	  <!--
       <ul id="resultsList" data-role="listview" data-autodividers="false" data-inset="true">                
       </ul>
-	  -->
-	  
+	  -->	  
     </div>
     
     <div id="resultsMenu" 
@@ -460,6 +488,7 @@
 <script type="text/javascript" src="cordova.js"></script>    
 <script type="text/javascript" src="js/base64.js"></script>
 <script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
     app.initialize(); 

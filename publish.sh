@@ -31,7 +31,15 @@ then
 
   cp -f webapp/js/config-prod.js android/www/js/config.js
   cp -f webapp/js/config-prod.js ios/www/js/config.js
-  
+
+  echo "updating android app version number ..." 
+  xmllint --xpath "/*[local-name()='widget']/@version" android/config.xml | sed -e "s/-/_/g;s/^/var /g;s/$/\;/g;s/version/app_version/g" >> android/www/js/config.js
+  xmllint --xpath "/*[local-name()='widget']/@android-versionCode" android/config.xml | sed -e "s/-/_/g;s/^/var /g;s/$/\;/g" >> android/www/js/config.js
+
+  echo "updating ios app version number ..." 
+  xmllint --xpath "/*[local-name()='widget']/@version" ios/config.xml | sed -e "s/-/_/g;s/^/var /g;s/$/\;/g;s/version/app_version/g" >> ios/www/js/config.js
+  xmllint --xpath "/*[local-name()='widget']/@ios-CFBundleVersion" ios/config.xml | sed -e "s/-/_/g;s/^/var /g;s/$/\;/g" >> ios/www/js/config.js
+
   rm -f tmp.js
 
 elif [ "$1" == "prod" ] 

@@ -1024,8 +1024,7 @@ function deviceReadyInitializer()
 	
 	//
 	// load queries
-	//
-	
+	//	
 	$.ajax({
 		type: "GET", 
 		url: QUERY_XML,
@@ -1041,12 +1040,12 @@ function deviceReadyInitializer()
 	
 	//
 	// perform autocomplete styles
-	//
-	
+	//	
 	$("#search").on( "pageshow", function( event ) { 
     
     	if (!$('#displaysearch').is(':visible')) {
-			$('#displaysearch').slideToggle("slow", function() {});    		
+			$('#displaysearch').slideToggle("fast", function() {});    		
+			//$('#displaysearch').fadeIn(400);
     	}
 
 		$('#search div .ui-input-search')            
@@ -1143,38 +1142,41 @@ function deviceReadyInitializer()
     });	
 	
 	$('#search').on("swiperight", function () {                      						
-		goprev();
+		//
+		// TODO ancora non funziona bene:
+		//		si sminchia la ricerca ritornando in forward
+		//
+		//goprev();
 	});
 	
-	//$('#results').on("swiperight", function () {
-	//	goprev();
-	//});	
+	$('#results').on("swiperight", function () {
+		goback();
+	});	
 }
 
 function goprev() {
 
+	//
+	// decremento i contatori della tabella grammature
+	//
+	for (var j = 0; j < table.length; j ++) {
+		if (table[j][1] > 0) table[j][1] --;
+	}
+
+	//
+	// riporto la selezione corrente indietro di 1
+	//
 	var i = 0;
 	for (i = sel_.length - 1; i > 0; i --) {
 		if (sel_[i] != '') {
 			break;
 		}
 	}
-	
-	var sel_prev = sel_[i];
 	sel_[i] = '';
+	i --;	
 
-	/*
-	console.log(' ##################### > ' + i);
-	var t = '';
-	for (var j = 0; j < sel_.length; j ++) {
-		 t += "/" + sel_[j];
-	}
-	console.log(' --------------------- > ' + t);
-	*/
-
-	if (i > 1) {
-		goback();
-		//setPage(i, sel_[i - 1]);
+	if (i > 0) {		
+		setPage(i, sel_[i], true);
 	}
 	else {
 		goback();
@@ -1185,7 +1187,7 @@ function goprev() {
 function goback() {
 	
 	if ($("#cerca0").html().length == 0) return;
-	
+
 	for (var i = 0; i < sel_.length; i++) {
 		sel_[i] = '';
 	}
@@ -1211,6 +1213,7 @@ function goback() {
 			$('#autocomplete2div').show();
 			
 			$("#menucerca").slideToggle("slow", function() {});				
+						
 		},
 
 		200);
@@ -1490,12 +1493,10 @@ var ups_ = null;
 //
 var AIC_MODE = 2; 
 
-function setPage (stage, keep) {
-		
-	skipchange_ = true;
+function setPage (stage, keep, reverse) {
 	
 	sel_[stage] = keep;	
-	
+
 	if (stage >= STAGE_LAST) 
 	{
 		var aicList = '';
@@ -1549,7 +1550,7 @@ function setPage (stage, keep) {
 		var selections = [ '' ];
 		var selections_ptr = 0;
 		var lst = '|';
-		
+
 		for (var i = 1; i < table.length; i ++)
 		{			
 			//console.log(' ********* ' + JSON.stringify(table[i]));
@@ -1682,12 +1683,21 @@ function setPage (stage, keep) {
 	//
 	// fine ordinamento
 	//
-	
-	$("#menuforma").slideToggle( "slow", function() {});
-	
-	$.mobile.changePage('#search', { 		
-		allowSamePageTransition: true, 
-		transition: 'slide'
-	});						
-	
+	if (reverse) {
+		$.mobile.changePage('#search', { 		
+			allowSamePageTransition: true, 
+			transition: 'slide',
+			reverse: true
+		});						
+	}
+	else {
+		$.mobile.changePage('#search', { 		
+			allowSamePageTransition: true, 
+			transition: 'slide'
+		});							
+	}
+		
+	$("#menuforma").fadeIn(1000);
+	//$("#menuforma").slideToggle( "slow", function() {});
+
 }

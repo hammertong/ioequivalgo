@@ -84,9 +84,6 @@
 	</query>
 	
 	<query name="cercaGruppoPerAIC">			
-		<!-- 
-			query invocata dalla scansione ottica del codice a barre			
-			-->
 		<sql>	
 		<![CDATA[				
 			select distinct FDI_0021 as classe, 
@@ -100,9 +97,6 @@
 	</query>
 	
 	<query name="cercaGruppoPerAIC_in">			
-		<!-- 
-			query invocata dalla scansione ottica del codice a barre			
-			-->
 		<sql>	
 		<![CDATA[				
 			select distinct FDI_0021 as classe, 
