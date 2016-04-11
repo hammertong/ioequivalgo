@@ -1,0 +1,16 @@
+#
+# IMAGEMAGIK
+#
+
+1) applicazione watermark
+composite -dissolve 10% -gravity NorthEast ..\images\de.png sources\F0016398.pdf sources\F1016398.pdf
+
+#
+# GHOSTSCRIPT
+#
+
+1) rasterizzazione pagina/e da pdf 
+   gswin64c -q -dQUIET -dBATCH -dNOPOMPT -sDEVICE=pngalpha -o page3.png -dFirstPage=3 -dLastPage=3 -r120 sources\F0016398.pdf
+
+2) ottenere numero di pagine di un PDF
+   gswin32c -q -dNODISPLAY -c "(C:\Users\Karonte\Documents\Books\Phonegap.pdf) (r) file runpdfbegin pdfpagecount = quit" 
