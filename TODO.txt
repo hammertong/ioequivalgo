@@ -1,5 +1,12 @@
-URGENTI
--------
+PRIORITARIO
+-----------
+
+- visualizzazione su android con tastiera
+- test android/iphone e pubblicazione
+
+
+PRIORITARIO WORKAROUNDED/RIMANDATI
+----------------------------------
 
 + back button
   @ gestito al momento solo sulla pagina di risultati
@@ -10,6 +17,7 @@ URGENTI
 ? dosaggi complessi 1mg + 2mg + AMINOVEN ...
   @ rimossa la ricerca dosaggio/posol per farmaci che non hanno equivalenti
  
+
 MIGLIORIE
 ---------
 

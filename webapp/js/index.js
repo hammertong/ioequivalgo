@@ -928,6 +928,15 @@ function deviceReadyInitializer()
                 html = "";
 
         $ul.html(""); 
+
+		// la versione di android non rileva l'onkeybord hide/show, questo
+        // e' un workaround per rendere visibile l'autocompletamento
+        //console.log(' ********** TOP: ' + $input.offset().top + ' HEIGHT: ' + $input.height());        
+        if (typeof android_versionCode != "undefined") {
+			var y_shift = $input.offset().top;
+			y_shift -= $input.height();
+			$("html, body").animate({ scrollTop: y_shift }, 400);        			
+        }
 		
         if (value && value.length > 2) {
 
@@ -1009,6 +1018,15 @@ function deviceReadyInitializer()
                 html = "";  
 
         $ul.html("");
+
+        // la versione di android non rileva l'onkeybord hide/show, questo
+        // e' un workaround per rendere visibile l'autocompletamento
+        //console.log(' ********** TOP: ' + $input.offset().top + ' HEIGHT: ' + $input.height());        
+        if (typeof android_versionCode != "undefined") {
+			var y_shift = $input.offset().top;
+			y_shift -= $input.height();
+			$("html, body").animate({ scrollTop: y_shift }, 400);        			
+        }
 		
         if (value && value.length > 2) {
 
@@ -1113,10 +1131,13 @@ function deviceReadyInitializer()
 	//	
 	$("#search").on( "pageshow", function( event ) { 
     
-    	if (!$('#displaysearch').is(':visible')) {
-			$('#displaysearch').slideToggle("fast", function() {});    		
-			//$('#displaysearch').fadeIn(400);
-    	}
+    	//if (!$('#displaysearch').is(':visible')) {
+		//	$('#displaysearch').slideToggle("fast", function() {});    		
+    	//}
+
+    	if (!$('#searchmain').is(':visible')) {
+			$('#searchmain').fadeIn(800);			
+    	}    	
 
 		$('#search div .ui-input-search')            
 			.each(function(ev) {             
@@ -1211,8 +1232,7 @@ function deviceReadyInitializer()
 		
     });	
 	
-	$('#search').on("swiperight", function () {                      						
-		//
+	$('#search').on("swiperight", function () {
 		// TODO ancora non funziona bene:
 		//		1) si sminchia la ricerca ritornando in forward
 		//
@@ -1220,7 +1240,6 @@ function deviceReadyInitializer()
 	});
 	
 	$('#results').on("swiperight", function () {
-		//
 		// TODO ancora non funziona bene:
 		//		1) se c'e' us salto diretto senza passaggi 
 		//			intermedi non rileva correttamente il goprev
@@ -1296,11 +1315,13 @@ function goback() {
 }
 
 function onKeyboardHide() {    
-	$('html, body').animate({scrollTop: 0}, 400);	
+	//TODO: non viene rilevato in android, usare OnClickAutocompplete o clear dopo filterablebeforefilter?
+	//$('html, body').animate({scrollTop: 0}, 400);	
 }
 
 function onKeyboardShow() {
-    $('html, body').animate({scrollTop: 320}, 400);	
+	//TODO: non viene rilevato in android, usare filterablebeforefilter?
+    //$('html, body').animate({scrollTop: 320}, 400);	
 }
 
 var app = {
@@ -1571,6 +1592,8 @@ function setPage (stage, keep, reverse) {
 	
 	sel_[stage] = keep;	
 
+	//$('#search').on("swiperight", function () { goprev(); });
+
 	if (stage >= STAGE_LAST) 
 	{
 		var aicList = '';
@@ -1613,7 +1636,7 @@ function setPage (stage, keep, reverse) {
 
 		ups_ = ups;
 		cercaPerAIC (aicList);
-		
+
 		return; 
 		
 	}

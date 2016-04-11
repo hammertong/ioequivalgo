@@ -84,9 +84,6 @@
 	</query>
 	
 	<query name="cercaGruppoPerAIC">			
-		<!-- 
-			query invocata dalla scansione ottica del codice a barre			
-			-->
 		<sql>	
 		<![CDATA[				
 			select distinct FDI_0021 as classe, 
@@ -100,9 +97,6 @@
 	</query>
 	
 	<query name="cercaGruppoPerAIC_in">			
-		<!-- 
-			query invocata dalla scansione ottica del codice a barre			
-			-->
 		<sql>	
 		<![CDATA[				
 			select distinct FDI_0021 as classe, 
@@ -190,6 +184,30 @@
 		</sql>
 	</query>
 	
+	<query name="recuperaDettaglioAIC">			
+		<sql>				
+		<![CDATA[
+				SELECT TOP ? 
+						APP_CA.FDI_0001 as codice,  
+						APP_CA.FDI_4875 as descrizione,  
+						APP_CA.FDI_0041 as ditta, 
+						APP_CA.FDI_0021 as classe, 
+						APP_CA.FDI_0371 as forma, 
+						CASE APP_CA.FDI_9238 WHEN 0 THEN 99999.99 ELSE APP_CA.FDI_9238 END as prezzoAlPubblico, 
+						CASE APP_CA.FDI_0491 WHEN 0 THEN 99999.99 ELSE APP_CA.FDI_0491 END as prezzoRimborsoNazionale, 
+						APP_CA.FDI_0364 as principioAttivoBase, 
+						APP_CA.FDI_0340 as principioAttivo, 
+						APP_CA.FDI_9159 as inListaDiTrasparenza, 
+						APP_CA.FDI_9172 as generico, 
+						APP_CA.FDI_9250 as brand, 
+						APP_CA.FDI_0012 as tipoRicetta
+					FROM APP_CA 			
+					WHERE APP_CA.FDI_0001 in (?) 
+				ORDER BY prezzoAlPubblico ASC, descrizione ASC
+		]]>
+		</sql>
+	</query>
+
 	<query name="tabellaOrdinataDosaggiPerPA">			
 		<sql>	
 		<![CDATA[
@@ -212,7 +230,7 @@
 				AND APP_CA.FDI_0021 in ('A', 'C', 'CN') 
 				AND TR028.FDI_T334 = 1
 				--AND TR025.FDI_T322 = 1
-				AND NOT (APP_CA.FDI_1010 IS NULL AND APP_CA.FDI_1094 IS NULL)
+				--AND NOT (APP_CA.FDI_1010 IS NULL AND APP_CA.FDI_1094 IS NULL)
 			ORDER BY aic ASC, id_par ASC, id_seq ASC
 		]]>
 		</sql>
@@ -240,10 +258,10 @@
 				AND APP_CA.FDI_0021 in ('A', 'C', 'CN') 
 				AND TR028.FDI_T334 = 1
 				--AND TR025.FDI_T322 = 1
-				AND NOT (APP_CA.FDI_1010 IS NULL AND APP_CA.FDI_1094 IS NULL)
+				--AND NOT (APP_CA.FDI_1010 IS NULL AND APP_CA.FDI_1094 IS NULL)
 			ORDER BY aic ASC, id_par ASC, id_seq ASC
 		]]>
 		</sql>
 	</query>
-		
+
 </data>
