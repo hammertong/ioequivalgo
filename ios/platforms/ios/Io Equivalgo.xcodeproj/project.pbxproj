@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		071F097FBCF440768D31DDE5 /* CDVBarcodeScanner.mm in Sources */ = {isa = PBXBuildFile; fileRef = 772E584C14F34C97ACF616A4 /* CDVBarcodeScanner.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		08D5FDE3D5EB442AB9D5A5F6 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 63423BE6A258418DA38827DD /* libiconv.dylib */; };
@@ -328,7 +329,7 @@
 						DevelopmentTeam = QTLGRV8J47;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
